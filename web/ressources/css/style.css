@@ -42,3 +42,46 @@
 .text-center{
     text-align: center;
 }
+
+.btn-ara-buy:hover{
+    border: 1px solid #761c19 !important;
+    background-color: white;
+    color: #761c19;
+}
+.btn-ara-buy{
+    margin-top: 22px;
+    background-color: #761c19;
+    color: white;
+}
+
+.ara-setting{
+    padding-bottom: 50px;
+}
+
+.ara-newsletter{
+    background: #761c19;
+    padding-bottom: 70px;
+}
+
+.ara-newsletter h2{
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.space{
+    margin-top: 20px;
+    margin-top: 20px;
+}
+
+.ara-talk button{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.ara-talk{
+    padding-bottom: 50px;
+    background-color: #333333;
+    color: #c0c0c0;
+}

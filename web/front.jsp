@@ -16,10 +16,24 @@
 <div class="container-fluid">
     <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">Projet Ara</a>
+            <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
             <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
         </div>
     </nav>
+
+    <div class="row">
+        <div class="panel panel-default" style="margin-top: 50px">
+            <div class="panel-body" style="padding-top: 0px">
+                <div class="row">
+                    <div class="col-md-2"><h1>Projet Ara</h1></div>
+                    <div class="col-md-offset-8 col-md-1">
+                        <button class="btn btn-default btn-ara-buy">Acheter Kit à 299 €</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row ara-intro">
         <div class="col-md-offset-1 col-md-10">
             <div class="container ara-first-picture">
@@ -65,8 +79,103 @@
             <img class="picture-center" src="<%=request.getContextPath()%>/ressources/img/size-ara.jpg"/>
         </div>
     </div>
-<p><% String mytask = (String) request.getAttribute("mytask");
-    out.println("mytask = " + mytask);%></p>
+    <!-- caractéristique technique -->
+    <div class="row ara-setting">
+        <div class="container">
+            <h3>Aperçu</h3>
+            <p>Design 100% metal, materiaux de qualité garantice une grand solidité des modules. Le tout tournant sur la dernier monture android(Android 6.0 Marshmallow)</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Un module personalisé</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
+                        Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
+                        Fusce vel tempor ante, molestie lobortis enim. Sed mattis mattis suscipit. Morbi porttitor dolor quis nibh commodo consequat.
+                        Sed pretium id felis a aliquam. Vestibulum aliquet vitae velit ac tristique. In fermentum hendrerit urna, ut tristique orci tincidunt vitae.
+                        Pellentesque nec rhoncus dui. Nam volutpat justo sed consequat euismod. Fusce fringilla erat ut elit molestie molestie.
+                        Suspendisse consectetur elit quis arcu blandit cursus. Duis pellentesque viverra felis at feugiat.
+                    </p>
+                    <h3>Des performance Equivalente</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
+                        Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
+                        Fusce vel tempor ante, molestie lobortis enim. Sed mattis mattis suscipit. Morbi porttitor dolor quis nibh commodo consequat.
+                        Sed pretium id felis a aliquam. Vestibulum aliquet vitae velit ac tristique. In fermentum hendrerit urna, ut tristique orci tincidunt vitae.
+                        Pellentesque nec rhoncus dui. Nam volutpat justo sed consequat euismod. Fusce fringilla erat ut elit molestie molestie.
+                        Suspendisse consectetur elit quis arcu blandit cursus. Duis pellentesque viverra felis at feugiat.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Un grand choix de fonctionnalité</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
+                        Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
+                        Fusce vel tempor ante, molestie lobortis enim. Sed mattis mattis suscipit. Morbi porttitor dolor quis nibh commodo consequat.
+                        Sed pretium id felis a aliquam. Vestibulum aliquet vitae velit ac tristique. In fermentum hendrerit urna, ut tristique orci tincidunt vitae.
+                        Pellentesque nec rhoncus dui. Nam volutpat justo sed consequat euismod. Fusce fringilla erat ut elit molestie molestie.
+                        Suspendisse consectetur elit quis arcu blandit cursus. Duis pellentesque viverra felis at feugiat.
+                    </p>
+                    <h3>Une stabilité a tout epreuve</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
+                        Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
+                        Fusce vel tempor ante, molestie lobortis enim. Sed mattis mattis suscipit. Morbi porttitor dolor quis nibh commodo consequat.
+                        Sed pretium id felis a aliquam. Vestibulum aliquet vitae velit ac tristique. In fermentum hendrerit urna, ut tristique orci tincidunt vitae.
+                        Pellentesque nec rhoncus dui. Nam volutpat justo sed consequat euismod. Fusce fringilla erat ut elit molestie molestie.
+                        Suspendisse consectetur elit quis arcu blandit cursus. Duis pellentesque viverra felis at feugiat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ara-newsletter">
+        <div class="container">
+            <h2>Recevoir nos Newsletter Regulière !!</h2>
+            <div class="input-group col-md-offset-1 col-md-10">
+                <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
+                <span class="input-group-addon" id="basic-addon2">Souscrire</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ara-talk">
+        <div class="container">
+            <h2 class="text-center">Il parle de nous !</h2>
+            <p class="text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
+                Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
+            </p>
+            <h3 class="text-center">Faites de même !</h3>
+            <div>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Pseudo</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+
+                <p class="space"></p>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Adresse E-mail</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+
+                <p class="space"></p>
+
+                <div class="form-group">
+                    <label>Votre Avis !</label>
+                    <textarea class="form-control">
+
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Envoyez</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
