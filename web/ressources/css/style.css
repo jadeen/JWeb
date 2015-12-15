@@ -1,0 +1,44 @@
+.bilboquet-navbar{
+    color: white !important;
+    background-color: #761c19;
+}
+.bilboquet-navbar a, .bilboquet-navbar p{
+    color: white !important;
+}
+
+.btn-red-bilboquet{
+    background-color: #761c19 !important;
+    color: white;
+    margin: auto;
+    width: 1220px;
+    display: block;
+    margin-top: 400px;
+}
+.btn-red-bilboquet:hover{
+    color: white;
+}
+.ara-intro{
+    margin-top: 50px;
+}
+
+.ara-intro h1{
+    font-weight: bold;
+    font-family: Calibri;
+    font-size: 50px;
+}
+
+.picture-center{
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.ara-first-picture{
+    margin-right: auto;
+    margin-left: auto;
+    width: 700px;
+    display: block;
+}
+.text-center{
+    text-align: center;
+}

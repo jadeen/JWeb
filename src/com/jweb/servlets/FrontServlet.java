@@ -15,6 +15,7 @@ public class FrontServlet extends javax.servlet.http.HttpServlet {
         response.setContentType("text/html");
         String mytask = request.getParameter("mytask");
         request.setAttribute("mytask", mytask);
+        System.out.println(request.getRequestURI());
 
         this.getServletContext().getRequestDispatcher( "/front.jsp" ).forward
                 ( request, response );
