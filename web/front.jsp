@@ -9,8 +9,8 @@
 <html>
 <head>
     <title>Projat Ara By Epitech</title>
-    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/ressources/css/bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/ressources/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css" />
 </head>
 <body>
 <div class="container-fluid">
@@ -24,14 +24,14 @@
         <div class="col-md-offset-1 col-md-10">
             <div class="container ara-first-picture">
                 <h1 class="text-center">Projet Ara !</h1>
-                <img src="<%=request.getContextPath()%>/ressources/img/affiche.png"/>
+                <img src="<%=request.getContextPath()%>/resources/img/affiche.png"/>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="container">
             <div class="col-md-3">
-                <img style="width: 240px" src="<%=request.getContextPath()%>/ressources/img/shop-ara.jpg"/>
+                <img style="width: 240px" src="<%=request.getContextPath()%>/resources/img/shop-ara.jpg"/>
             </div>
             <div class="col-md-8">
                 <h2 style="margin-top: 0px">Lancement de la première boutique Ara en Californie</h2>
@@ -46,7 +46,7 @@
     <div class="row">
         <div class="container">
             <div class="col-md-7 col-md-offset-1">
-                <img style="width:600px" src="<%=request.getContextPath()%>/ressources/img/block-ara.jpg"/>
+                <img style="width:600px" src="<%=request.getContextPath()%>/resources/img/block-ara.jpg"/>
             </div>
             <div class="col-md-4">
                 <h3 style="margin-top: 100px">Une selection modulaire</h3>
@@ -62,7 +62,7 @@
             <p class="text-center">
                 Vous pourrez choissir le socle de votre projet Ara en fonction de 3 taile différente. Chaque taile permettant un ajout limité de module.
             </p>
-            <img class="picture-center" src="<%=request.getContextPath()%>/ressources/img/size-ara.jpg"/>
+            <img class="picture-center" src="<%=request.getContextPath()%>/resources/img/size-ara.jpg"/>
         </div>
     </div>
 <p><% String mytask = (String) request.getAttribute("mytask");
