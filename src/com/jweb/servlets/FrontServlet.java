@@ -20,7 +20,7 @@ public class FrontServlet extends javax.servlet.http.HttpServlet {
         System.out.println(request.getRequestURI());
 
         // Sql
-        SqlManager.executeQuery()
+//        SqlManager.executeQuery()
 
         this.getServletContext().getRequestDispatcher( "/front.jsp" ).forward
                 ( request, response );
