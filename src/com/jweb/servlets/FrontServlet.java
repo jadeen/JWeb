@@ -1,5 +1,7 @@
 package com.jweb.servlets;
 
+import com.jweb.sql.SqlManager;
+
 import javax.servlet.annotation.*;
 
 /**
@@ -16,6 +18,9 @@ public class FrontServlet extends javax.servlet.http.HttpServlet {
         String mytask = request.getParameter("mytask");
         request.setAttribute("mytask", mytask);
         System.out.println(request.getRequestURI());
+
+        // Sql
+        SqlManager.executeQuery()
 
         this.getServletContext().getRequestDispatcher( "/front.jsp" ).forward
                 ( request, response );
