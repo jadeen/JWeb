@@ -1,8 +1,8 @@
 package com.jweb.servlets;
 
-import com.jweb.sql.SqlManager;
-
 import javax.servlet.annotation.*;
+
+import javax.servlet.*;
 
 /**
  * Created by Kevin Marrec on 12/14/2015.
@@ -14,6 +14,7 @@ public class FrontServlet extends javax.servlet.http.HttpServlet {
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+
 
         this.getServletContext().getRequestDispatcher( "/front.jsp" ).forward
                 ( request, response );

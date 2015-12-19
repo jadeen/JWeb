@@ -11,10 +11,19 @@
     <title>Projet Ara - Blog</title>
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/blog.css" />
+    <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css" />
 </head>
 <body>
 
 <div class="container-fluid">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
+            <div class="container">
+                <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
+                <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+            </div>
+        </nav>
+    </div>
     <div class="row blog-articles">
         <div class="container">
             <div class="row blog-article">
