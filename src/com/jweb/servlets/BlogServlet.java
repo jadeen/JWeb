@@ -19,14 +19,6 @@ public class BlogServlet extends javax.servlet.http.HttpServlet {
 
         SqlManager sm = SqlManager.getInstance();
 
-        sm.openConnection();
-
-        ResultSet res = sm.executeQuery("SELECT * FROM Articles");
-
-        System.out.println(res.toString());
-
-        sm.closeConnection();
-
         this.getServletContext().getRequestDispatcher( "/blog.jsp" ).forward
                 ( request, response );
 

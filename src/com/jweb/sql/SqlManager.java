@@ -7,19 +7,36 @@ import java.sql.*;
  */
 public class SqlManager {
 
-    private static String defaultConnection = "jdbc:sqlite:D:/Projects/JWeb/JWeb.db";
+    private static String defaultConnection = "jdbc:sqlite:JWeb.db";
 
     private Connection _connection = null;
 
     private static SqlManager _instance = null;
+
     protected SqlManager() {
-        // Exists only to defeat instantiation.
+        initDatabase();
     }
+
     public static SqlManager getInstance() {
         if(_instance == null) {
             _instance = new SqlManager();
         }
         return _instance;
+    }
+
+    private void initDatabase()
+    {
+        openConnection();
+
+        String articlesTable = "CREATE TABLE IF NOT EXISTS " + "`Articles`"
+                + "  (`IdArticle` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                + "   `Title` VARCHAR(150) NOT NULL,"
+                + "   `Content` TEXT NOT NULL,"
+                + "   `IdUser` INTEGER NOT NULL)";
+
+        execute(articlesTable);
+
+        closeConnection();
     }
 
     public boolean openConnection()
@@ -59,7 +76,7 @@ public class SqlManager {
         return true;
     }
 
-    public boolean executeUpdate(String query)
+    public boolean execute(String query)
     {
         if (_connection == null)
             return false;
@@ -67,15 +84,31 @@ public class SqlManager {
         try
         {
             Statement statement = _connection.createStatement();
-            statement.executeUpdate(query);
+            statement.execute(query);
+            return true;
         }
         catch(SQLException e)
         {
             System.err.println(e);
             return false;
         }
+    }
 
-        return true;
+    public int executeUpdate(String query)
+    {
+        if (_connection == null)
+            return -1;
+
+        try
+        {
+            Statement statement = _connection.createStatement();
+            return statement.executeUpdate(query);
+        }
+        catch(SQLException e)
+        {
+            System.err.println(e);
+            return -1;
+        }
     }
 
     public ResultSet executeQuery(String query)
@@ -83,19 +116,15 @@ public class SqlManager {
         if (_connection == null)
             return null;
 
-        ResultSet result;
-
         try
         {
             Statement statement = _connection.createStatement();
-            result = statement.executeQuery(query);
+            return statement.executeQuery(query);
         }
         catch(SQLException e)
         {
             System.err.println(e);
             return null;
         }
-
-        return result;
     }
 }
