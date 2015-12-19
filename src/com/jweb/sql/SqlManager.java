@@ -7,76 +7,95 @@ import java.sql.*;
  */
 public class SqlManager {
 
-    private static String defaultConnection = "jdbc:sqlite:D:/Projects/JWeb/test.db";
+    private static String defaultConnection = "jdbc:sqlite:D:/Projects/JWeb/JWeb.db";
 
-    public static boolean executeUpdate(String query)
+    private Connection _connection = null;
+
+    private static SqlManager _instance = null;
+    protected SqlManager() {
+        // Exists only to defeat instantiation.
+    }
+    public static SqlManager getInstance() {
+        if(_instance == null) {
+            _instance = new SqlManager();
+        }
+        return _instance;
+    }
+
+    public boolean openConnection()
     {
         try
-        { Class.forName( "org.sqlite.JDBC" ); }
-        catch ( ClassNotFoundException e ) { return false; }
+        {
+            Class.forName( "org.sqlite.JDBC" );
+            _connection = DriverManager.getConnection(defaultConnection);
+        }
+        catch ( ClassNotFoundException e )
+        {
+            System.err.println(e);
+            return false;
+        }
+        catch ( SQLException e )
+        {
+            System.err.println(e);
+            return false;
+        }
 
-        Connection connection = null;
+        return true;
+    }
+
+    public boolean closeConnection()
+    {
+        try
+        {
+            if(_connection != null)
+                _connection.close();
+        }
+        catch(SQLException e)
+        {
+            System.err.println(e);
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean executeUpdate(String query)
+    {
+        if (_connection == null)
+            return false;
 
         try
         {
-            connection = DriverManager.getConnection(defaultConnection);
-            Statement statement = connection.createStatement();
+            Statement statement = _connection.createStatement();
             statement.executeUpdate(query);
         }
         catch(SQLException e)
         {
+            System.err.println(e);
             return false;
         }
 
-        finally
-        {
-            try
-            {
-                if(connection != null)
-                    connection.close();
-            }
-            catch(SQLException e)
-            {
-                System.err.println(e);
-                return false;
-            }
-        }
         return true;
     }
 
-    public static ResultSet executeQuery(String query)
+    public ResultSet executeQuery(String query)
     {
-        try
-        { Class.forName( "org.sqlite.JDBC" ); }
-        catch ( ClassNotFoundException e ) { return null; }
+        if (_connection == null)
+            return null;
 
-        Connection connection = null;
-        ResultSet result = null;
+        ResultSet result;
 
         try
         {
-            connection = DriverManager.getConnection(defaultConnection);
-            Statement statement = connection.createStatement();
+            Statement statement = _connection.createStatement();
             result = statement.executeQuery(query);
         }
         catch(SQLException e)
         {
+            System.err.println(e);
             return null;
         }
 
-        finally
-        {
-            try
-            {
-                if(connection != null)
-                    connection.close();
-            }
-            catch(SQLException e)
-            {
-                System.err.println(e);
-                return null;
-            }
-        }
         return result;
     }
 }
