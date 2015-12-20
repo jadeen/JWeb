@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
   User: Kevin Marrec
   Date: 12/14/2015
@@ -17,7 +17,25 @@
     <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
         <div class="container">
             <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
-            <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+            <%
+                Boolean flag = (Boolean) request.getAttribute("isConnect");
+                if (flag){
+                    %>
+                    <p class="navbar-text navbar-right">
+                        Connectez en tant que
+                        <a href="/profil" class="navbar-link">
+                        <% String mytask = (String) request.getAttribute("name");
+                                out.println("" + mytask);
+                        %>
+                        </a>
+                    </p>
+                    <%
+                }else {
+                    %>
+                    <p class="navbar-text navbar-right"><a href="/profil" class="navbar-link">Se connectez/S'inscrire</a></p>
+                    <%
+                }
+            %>
         </div>
     </nav>
 
@@ -133,8 +151,13 @@
         <div class="container">
             <h2>Recevoir nos Newsletter Regulière !!</h2>
             <div class="input-group col-md-offset-1 col-md-10">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-addon" id="basic-addon2">Souscrire</span>
+                <form class="form-inline" action="/product/newsletter" method="POST">
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                        <input type="email" name="mail" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                    </div>
+                    <button type="submit" class="btn btn-default">Sign in</button>
+                </form>
             </div>
         </div>
     </div>
@@ -143,36 +166,36 @@
         <div class="container">
             <h2 class="text-center">Il parle de nous !</h2>
             <p class="text-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
-                Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
+                <% String res = (String) request.getAttribute("opinionText");
+                    if (res == null){
+                        out.println("Aucun avis pour le moment !");
+                    }else {
+                        out.println(res);
+                    }
+                %>
             </p>
             <h3 class="text-center">Faites de même !</h3>
             <div>
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Pseudo</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
 
-                <p class="space"></p>
+                <%
+                    if (flag){
+                %>
+                <form method="POST" action="/product/opinion">
+                    <div class="form-group">
+                        <label>Votre Avis !</label>
+                        <textarea class="form-control" name="opinion">
 
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon1">Adresse E-mail</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                </div>
-
-                <p class="space"></p>
-
-                <div class="form-group">
-                    <label>Votre Avis !</label>
-                    <textarea class="form-control">
-
-                    </textarea>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-default">Envoyez</button>
-                </div>
-
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default">Envoyez</button>
+                    </div>
+                </form>
+                <%
+                    }else{
+                %>
+                <h4>Iddentifiez-vous sur le site pour donner votre avis</h4>
+                <% }%>
             </div>
         </div>
     </div>

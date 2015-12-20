@@ -21,6 +21,5 @@ public class BlogServlet extends javax.servlet.http.HttpServlet {
 
         this.getServletContext().getRequestDispatcher( "/blog.jsp" ).forward
                 ( request, response );
-
     }
 }

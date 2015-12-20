@@ -36,6 +36,29 @@ public class SqlManager {
 
         execute(articlesTable);
 
+        String usersTable = "CREATE TABLE IF NOT EXISTS "+ "`Users`"
+                + "(`IdUser` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                + "`Nom` VARCHAR(40) NOT NULL,"
+                + "`Prenom` VARCHAR(40) NOT NULL,"
+                + "`Mail` VARCHAR(150) NOT NULL,"
+                + "`Login` VARCHAR(15) NOT NULL,"
+                + "`Password` VARCHAR(33) NOT NULL)";
+
+        execute(usersTable);
+
+        String newsletterTable = "CREATE TABLE IF NOT EXISTS "+ "`Newsletters`"
+                + "(`IdNewsletter` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                + "`Mail` VARCHAR(150) NOT NULL)";
+
+        execute(newsletterTable);
+
+        String opinionTable = "CREATE TABLE IF NOT EXISTS "+ "`Opinions`"
+                + "(`IdOpinion` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                + "`IdUser` INTEGER NOT NULL,"
+                + "`Opinion` TEXT NOT NULL)";
+
+        execute(opinionTable);
+
         closeConnection();
     }
 
