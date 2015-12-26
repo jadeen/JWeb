@@ -1,13 +1,12 @@
-package com.jweb.module;
+package com.jweb.models;
 
-import com.jweb.sql.SqlManager;
-import com.sun.org.apache.bcel.internal.generic.NEW;
+import com.jweb.tools.SqlManager;
 
 /**
  * Created by mickael on 12/20/2015.
  */
-public class Newsletter {
-    public Newsletter(){
+public class NewsletterModel {
+    public NewsletterModel(){
 
     }
 

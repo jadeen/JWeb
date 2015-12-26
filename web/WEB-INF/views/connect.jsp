@@ -17,7 +17,10 @@
         <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
             <div class="container">
                 <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
-                <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+                <a class="navbar-brand" href="/">Acceuil</a>
+                <p class="navbar-text navbar-left">
+                    <a href="/blog">Blog</a>
+                </p>
             </div>
         </nav>
 

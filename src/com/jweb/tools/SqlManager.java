@@ -1,4 +1,4 @@
-package com.jweb.sql;
+package com.jweb.tools;
 
 import java.sql.*;
 
@@ -42,7 +42,8 @@ public class SqlManager {
                 + "`Prenom` VARCHAR(40) NOT NULL,"
                 + "`Mail` VARCHAR(150) NOT NULL,"
                 + "`Login` VARCHAR(15) NOT NULL,"
-                + "`Password` VARCHAR(33) NOT NULL)";
+                + "`Password` VARCHAR(33) NOT NULL,"
+                + "`Admin` int(1) DEFAULT (0))";
 
         execute(usersTable);
 

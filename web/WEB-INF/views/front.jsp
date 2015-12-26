@@ -17,6 +17,10 @@
     <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
         <div class="container">
             <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
+            <a class="navbar-brand" href="/">Acceuil</a>
+            <p class="navbar-text navbar-left">
+                <a href="/blog">Blog</a>
+            </p>
             <%
                 Boolean flag = (Boolean) request.getAttribute("isConnect");
                 if (flag){

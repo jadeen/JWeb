@@ -89,3 +89,10 @@
     background-color: #333333;
     color: #c0c0c0;
 }
+.admin-link{
+    font-size: 17px;
+    color: black;
+}
+.space-line{
+    margin-right: 20px;
+}
