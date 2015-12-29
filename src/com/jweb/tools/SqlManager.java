@@ -32,6 +32,7 @@ public class SqlManager {
                 + "  (`IdArticle` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
                 + "   `Title` VARCHAR(150) NOT NULL,"
                 + "   `Content` TEXT NOT NULL,"
+                + "   `date` DATE NOT NULL,"
                 + "   `IdUser` INTEGER NOT NULL)";
 
         execute(articlesTable);
@@ -188,10 +189,12 @@ public class SqlManager {
         }
 
         try {
-            return preparedStatement.execute();
+            preparedStatement.execute();
+            return true;
         }
         catch (SQLException e){
             System.err.println(e);
+            System.out.println("pas d'erreur");
             return false;
         }
     }

@@ -1,5 +1,7 @@
 package com.jweb.beans;
 
+import java.util.Date;
+
 /**
  * Created by mickael on 12/21/2015.
  */
@@ -14,6 +16,8 @@ public class Article {
     private String author;
 
     private Integer idAuthor;
+
+    private Date date;
 
     public String getTitle(){
         return title;
@@ -53,5 +57,13 @@ public class Article {
 
     public Integer getIdAuthor() {
         return idAuthor;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

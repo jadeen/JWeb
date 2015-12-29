@@ -1,6 +1,7 @@
 <%@ page import="com.jweb.beans.Article" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%--
   Created by IntelliJ IDEA.
   User: Kevin Marrec
@@ -20,6 +21,8 @@
 
 <div class="container-fluid">
     <%@include file="/WEB-INF/views/nav.jsp" %>
+
+    <p class="big-space"></p>
     <div class="row blog-articles">
         <div class="container">
             <div class="row blog-article">
@@ -31,13 +34,20 @@
                         {
                             Article a = it.next();
                     %>
-                    <div class="row blog-article">
-                        <div class="container">
-                            <div class="col-md-offset-3 col-md-6 test">
-                                <p>Titre : <% out.println(a.getTitle()); %></p>
-                                <p>Contenu : <% out.println(a.getContent()); %></p>
-                                <p>Auteur : <% out.println(a.getAuthor()); %></p>
+                    <div class="row">
+                        <div class="container well">
+                            <h4><% out.println(a.getTitle()); %></h4>
+                            <div>
+                                <span class="label label-ara">Par <% out.println(a.getAuthor()); %></span>
+                                <span class="label label-ara">
+                                    <%
+                                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                                    out.println(sdf.format(a.getDate()));
+                                    %>
+                                </span>
                             </div>
+                            <p class="space"></p>
+                            <p><% out.println(a.getContent()); %></p>
                         </div>
                     </div>
                     <%

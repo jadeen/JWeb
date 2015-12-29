@@ -105,7 +105,6 @@ public class UserModel {
             preparedStatement.setString(1, login);
             ResultSet res = sm.executeQuery(preparedStatement);
             if (!res.next()){
-                System.out.println("user find");
                 sm.closeConnection();
                 throw new Exception("utilisateur non trouvé");
             }
@@ -122,8 +121,6 @@ public class UserModel {
 
         sm.openConnection();
 
-        Boolean ret;
-
         try {
             PreparedStatement preparedStatement = sm.prepareStatement("INSERT INTO Users (Nom, Prenom, Mail, Login, Password) VALUES(?,?,?,?,?)");
 
@@ -132,17 +129,15 @@ public class UserModel {
             preparedStatement.setString(3,mail);
             preparedStatement.setString(4,login);
             preparedStatement.setString(5,password);
-            ret = sm.execute(preparedStatement);
+            Boolean ret = sm.execute(preparedStatement);
+            sm.closeConnection();
+            return ret;
 
         }
         catch (SQLException e){
-            System.err.println(e);
+            System.err.println("Create User"+e);
             return false;
         }
-
-        sm.closeConnection();
-
-        return (ret);
     }
 
     public ArrayList<User> all(){
