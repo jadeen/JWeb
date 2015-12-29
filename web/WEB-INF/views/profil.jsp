@@ -16,46 +16,9 @@
 </head>
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
-            <div class="container">
-                <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
-                <a class="navbar-brand" href="/">Acceuil</a>
-                <p class="navbar-text navbar-left">
-                    <a href="/blog">Blog</a>
-                </p>
-                <p class="navbar-text navbar-right">
-                    Connectez en tant que
-                    <a href="/profil" class="navbar-link">
-                        <%
-                            User user = (User) request.getAttribute("user");
-                            out.println("" + user.getNom() + " "+ user.getPrenom()+"");
-                        %>
-                    </a>
-                </p>
-            </div>
-        </nav>
+        <%@include file="/WEB-INF/views/nav.jsp" %>
 
         <p class="big-space"></p>
-
-        <%
-            Boolean flag = user.getConnect();
-            if (flag){
-        %>
-        <div class="row">
-            <div class="panel panel-default" style="margin-top: -10px">
-                <div class="panel-body" style="padding-top: 0px">
-                    <div class="row">
-                        <div class="container" style="margin-top: 10px">
-                            <a href="/blog/create" class="admin-link space-line">Cree un article</a>
-                            <a href="/profil/admin" class="admin-link">Gérer les utilisateurs</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <%
-            }
-        %>
 
         <div class="row">
             <div class="container">
@@ -96,7 +59,7 @@
                             <p class="space text-center">
                                 <Strong>Status :</Strong>
                                 <%
-                                    if (!flag){
+                                    if (!user.getAdmin()){
                                 %>
                                     <span class="label label-primary">Utilisateur</span>
                                 <%

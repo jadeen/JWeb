@@ -16,24 +16,7 @@
 </head>
 <body>
 <div class="container-fluid">
-    <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
-        <div class="container">
-            <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
-            <a class="navbar-brand" href="/">Acceuil</a>
-            <p class="navbar-text navbar-left">
-                <a href="/blog">Blog</a>
-            </p>
-            <p class="navbar-text navbar-right">
-                Connectez en tant que
-                <a href="/profil" class="navbar-link">
-                    <%
-                        User user = (User) request.getAttribute("user");
-                        out.println("" + user.getNom() + " "+ user.getPrenom()+"");
-                    %>
-                </a>
-            </p>
-        </div>
-    </nav>
+    <%@include file="/WEB-INF/views/nav.jsp" %>
 
     <p class="big-space"></p>
 

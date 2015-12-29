@@ -7,7 +7,8 @@ import com.jweb.models.UserModel;
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet(name = "ProductController", urlPatterns = {"/product/*"})
-public class ProductController extends javax.servlet.http.HttpServlet {
+public class ProductController extends javax.servlet.http.HttpServlet{
+    static final String HOME = "/product";
     static final String NEWSLETTER = "/product/newsletter";
     static final String OPINION = "/product/opinion";
 
@@ -46,9 +47,23 @@ public class ProductController extends javax.servlet.http.HttpServlet {
                 doPostOpinion(request, response);
                 break;
         }
+    }
 
+    private void doGetHome(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+        UserModel user = new UserModel(request.getSession());
+
+        user.settingCurrentUserData();
+        request.setAttribute("user", user.currentUser);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/views/product.jsp").forward
+                (request, response);
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+        switch (request.getRequestURI()) {
+            case HOME:
+                doGetHome(request, response);
+                break;
+
+        }
     }
 }

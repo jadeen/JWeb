@@ -19,36 +19,7 @@
 <body>
 
 <div class="container-fluid">
-    <div class="container-fluid">
-        <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
-            <div class="container">
-                <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
-                <a class="navbar-brand" href="/">Acceuil</a>
-                <p class="navbar-text navbar-left">
-                    <a href="/blog">Blog</a>
-                </p>
-                <%
-                    Boolean flag = (Boolean) request.getAttribute("isConnect");
-                    if (flag){
-                %>
-                <p class="navbar-text navbar-right">
-                    Connectez en tant que
-                    <a href="/profil" class="navbar-link">
-                        <% String mytask = (String) request.getAttribute("name");
-                            out.println("" + mytask);
-                        %>
-                    </a>
-                </p>
-                <%
-                }else {
-                %>
-                <p class="navbar-text navbar-right"><a href="/profil" class="navbar-link">Se connectez/S'inscrire</a></p>
-                <%
-                    }
-                %>
-            </div>
-        </nav>
-    </div>
+    <%@include file="/WEB-INF/views/nav.jsp" %>
     <div class="row blog-articles">
         <div class="container">
             <div class="row blog-article">

@@ -1,8 +1,11 @@
 package com.jweb.models;
 
 import com.jweb.tools.SqlManager;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Created by mickael on 12/20/2015.
@@ -25,9 +28,20 @@ public class OpinionModel {
 
         sm.openConnection();
 
-        Boolean ret = sm.execute("INSERT INTO Opinions (IdUser, Opinion) VALUES("
-                + ""+user.currentUser.getId()+","
-                + "'"+opinion+"')");
+        Boolean ret;
+
+        try {
+            PreparedStatement preparedStatement = sm.prepareStatement("INSERT INTO Opinions (IdUser, Opinion) VALUES(?,?)");
+
+            preparedStatement.setInt(1,user.currentUser.getId());
+            preparedStatement.setString(2, opinion);
+
+            ret = sm.execute(preparedStatement);
+        }
+        catch (SQLException e){
+            System.err.println("SQLExecption :"+e.getMessage());
+            return false;
+        }
 
         sm.openConnection();
         return (ret);

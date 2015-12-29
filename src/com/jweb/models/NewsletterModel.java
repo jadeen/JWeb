@@ -2,6 +2,8 @@ package com.jweb.models;
 
 import com.jweb.tools.SqlManager;
 
+import java.sql.PreparedStatement;
+
 /**
  * Created by mickael on 12/20/2015.
  */
@@ -15,8 +17,18 @@ public class NewsletterModel {
 
         sm.openConnection();
 
-        Boolean res = sm.execute("INSERT INTO Newsletters (Mail) VALUES('"+mail+"')");
+        Boolean res;
+        try {
+            PreparedStatement preparedStatement = sm.prepareStatement("INSERT INTO Newsletters (Mail) VALUES(?)");
 
+            preparedStatement.setString(1, mail);
+
+            res = sm.execute(preparedStatement);
+        }
+        catch (Exception e){
+            System.err.println(e);
+            return false;
+        }
         sm.closeConnection();
 
         return (res);

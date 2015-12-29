@@ -63,6 +63,20 @@ public class SqlManager {
         closeConnection();
     }
 
+    public PreparedStatement prepareStatement(String sql){
+        if (_connection == null){
+            return null;
+        }
+
+        try {
+            return _connection.prepareStatement(sql);
+        }
+        catch (SQLException e){
+            System.err.println(e);
+            return null;
+        }
+    }
+
     public boolean openConnection()
     {
         try
@@ -135,6 +149,22 @@ public class SqlManager {
         }
     }
 
+
+    public ResultSet executeQuery(PreparedStatement preparedStatement)
+    {
+        if (_connection == null)
+            return null;
+
+        try
+        {
+            return preparedStatement.executeQuery();
+        }
+        catch(SQLException e)
+        {
+            System.err.println(e);
+            return null;
+        }
+    }
     public ResultSet executeQuery(String query)
     {
         if (_connection == null)
@@ -149,6 +179,20 @@ public class SqlManager {
         {
             System.err.println(e);
             return null;
+        }
+    }
+
+    public boolean execute(PreparedStatement preparedStatement){
+        if (_connection == null){
+            return false;
+        }
+
+        try {
+            return preparedStatement.execute();
+        }
+        catch (SQLException e){
+            System.err.println(e);
+            return false;
         }
     }
 }

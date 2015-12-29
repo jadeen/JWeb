@@ -26,13 +26,8 @@ public class FrontController extends javax.servlet.http.HttpServlet {
         opinion.getRandomOpinion();
         request.setAttribute("opinionText", opinion._text);
 
-        if (user.currentUser.getConnect()){
-            request.setAttribute("isConnect", true);
-            user.settingCurrentUserData();
-            request.setAttribute("name", user.getCompletName());
-        }else {
-            request.setAttribute("isConnect", false);
-        }
+        user.settingCurrentUserData();
+        request.setAttribute("user", user.currentUser);
 
         this.getServletContext().getRequestDispatcher( "/WEB-INF/views/front.jsp" ).forward
                 ( request, response );

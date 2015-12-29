@@ -2,9 +2,12 @@ package com.jweb.models;
 
 import com.jweb.beans.User;
 import com.jweb.tools.SqlManager;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.servlet.http.HttpSession;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -33,9 +36,13 @@ public class UserModel {
 
         sm.openConnection();
 
-        ResultSet res = sm.executeQuery("SELECT * FROM Users WHERE Login = '"+this.currentUser.getLogin()+"'");
-
         try {
+            PreparedStatement preparedStatement = sm.prepareStatement("SELECT * FROM Users WHERE Login = ?");
+
+            preparedStatement.setString(1, this.currentUser.getLogin());
+
+            ResultSet res = sm.executeQuery(preparedStatement);
+
             if (!res.next()){
                 throw new Exception("utilisateur non trouvé");
             }
@@ -66,7 +73,12 @@ public class UserModel {
 
         sm.openConnection();
         try {
-            ResultSet res = sm.executeQuery("SELECT * FROM Users WHERE login = '" + this.currentUser.getLogin() + "' AND password = '"+this.currentUser.getPassword()+"'");
+
+            PreparedStatement preparedStatement = sm.prepareStatement("SELECT * FROM Users WHERE login = ? AND password = ?");
+
+            preparedStatement.setString(1, this.currentUser.getLogin());
+            preparedStatement.setString(2, this.currentUser.getPassword());
+            ResultSet res = sm.executeQuery(preparedStatement);
             if (!res.next()){
                 throw new Exception("Connection Impossible");
             }else {
@@ -87,7 +99,11 @@ public class UserModel {
 
         sm.openConnection();
         try {
-            ResultSet res = sm.executeQuery("SELECT IdUser FROM Users WHERE Login = '"+login+"'");
+
+            PreparedStatement preparedStatement = sm.prepareStatement("SELECT IdUser FROM Users WHERE Login = ?");
+
+            preparedStatement.setString(1, login);
+            ResultSet res = sm.executeQuery(preparedStatement);
             if (!res.next()){
                 System.out.println("user find");
                 sm.closeConnection();
@@ -106,12 +122,24 @@ public class UserModel {
 
         sm.openConnection();
 
-        Boolean ret = sm.execute("INSERT INTO Users (Nom, Prenom, Mail, Login, Password) VALUES("
-                + "'"+nom+"',"
-                + "'"+prenom+"',"
-                + "'"+mail+"',"
-                + "'"+login+"',"
-                + "'"+password+"')");
+        Boolean ret;
+
+        try {
+            PreparedStatement preparedStatement = sm.prepareStatement("INSERT INTO Users (Nom, Prenom, Mail, Login, Password) VALUES(?,?,?,?,?)");
+
+            preparedStatement.setString(1,nom);
+            preparedStatement.setString(2,prenom);
+            preparedStatement.setString(3,mail);
+            preparedStatement.setString(4,login);
+            preparedStatement.setString(5,password);
+            ret = sm.execute(preparedStatement);
+
+        }
+        catch (SQLException e){
+            System.err.println(e);
+            return false;
+        }
+
         sm.closeConnection();
 
         return (ret);
@@ -141,9 +169,8 @@ public class UserModel {
             }
         }
         catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
-
 
         sm.closeConnection();
 
@@ -155,8 +182,16 @@ public class UserModel {
 
         sm.openConnection();
 
-        sm.execute("DELETE FROM Users WHERE IdUser = "+Id);
+        try {
+            PreparedStatement preparedStatement = sm.prepareStatement("DELETE FROM Users WHERE IdUser = ?");
 
+            preparedStatement.setInt(1, Integer.parseInt(Id));
+
+            sm.execute(preparedStatement);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         sm.closeConnection();
     }
 
@@ -165,11 +200,21 @@ public class UserModel {
 
         sm.openConnection();
 
-        ResultSet res = sm.executeQuery("SELECT Admin FROM Users WHERE IdUser = "+id);
-
         try {
+            PreparedStatement preparedStatement = sm.prepareStatement("SELECT Admin FROM Users WHERE IdUser = ?");
+
+            preparedStatement.setInt(1, Integer.parseInt(id));
+
+            ResultSet res = sm.executeQuery(preparedStatement);
+
             if (res.next()) {
-                System.out.println("Lol"+sm.execute("UPDATE Users SET Admin = "+(res.getString("Admin").equals("1") ? "0" : "1")+" WHERE IdUser = "+id));
+                preparedStatement = sm.prepareStatement("UPDATE Users SET Admin = ? WHERE IdUser = ?");
+
+                preparedStatement.setInt(1, res.getString("Admin").equals("1") ? 0 : 1);
+
+                preparedStatement.setInt(2, Integer.parseInt(id));
+
+                sm.execute(preparedStatement);
             }
         }
         catch (Exception e){
@@ -182,7 +227,4 @@ public class UserModel {
     public String getCompletName(){
         return this.currentUser.getPrenom() + " " + this.currentUser.getNom();
     }
-
-    public Boolean getStatusUser(){ return this.currentUser.getAdmin();}
-
 }

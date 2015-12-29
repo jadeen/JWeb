@@ -14,15 +14,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
-            <div class="container">
-                <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
-                <a class="navbar-brand" href="/">Acceuil</a>
-                <p class="navbar-text navbar-left">
-                    <a href="/blog">Blog</a>
-                </p>
-            </div>
-        </nav>
+        <%@include file="/WEB-INF/views/nav.jsp" %>
         <p class="big-space"></p>
         <div class="row">
             <div class="container">

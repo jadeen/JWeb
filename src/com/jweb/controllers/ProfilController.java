@@ -134,9 +134,10 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
     private void doGetHome(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
 
+        user.settingCurrentUserData();
+        request.setAttribute("user", user.currentUser);
+
         if (user.currentUser.getConnect()){
-            user.settingCurrentUserData();
-            request.setAttribute("user", user.currentUser);
             this.getServletContext().getRequestDispatcher("/WEB-INF/views/profil.jsp").forward
                     (request, response);
         }else{

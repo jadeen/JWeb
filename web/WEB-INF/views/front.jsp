@@ -8,40 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Projat Ara By Epitech</title>
+    <title>Projat Ara</title>
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css" />
 </head>
 <body>
 <div class="container-fluid">
-    <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
-        <div class="container">
-            <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
-            <a class="navbar-brand" href="/">Acceuil</a>
-            <p class="navbar-text navbar-left">
-                <a href="/blog">Blog</a>
-            </p>
-            <%
-                Boolean flag = (Boolean) request.getAttribute("isConnect");
-                if (flag){
-                    %>
-                    <p class="navbar-text navbar-right">
-                        Connectez en tant que
-                        <a href="/profil" class="navbar-link">
-                        <% String mytask = (String) request.getAttribute("name");
-                                out.println("" + mytask);
-                        %>
-                        </a>
-                    </p>
-                    <%
-                }else {
-                    %>
-                    <p class="navbar-text navbar-right"><a href="/profil" class="navbar-link">Se connectez/S'inscrire</a></p>
-                    <%
-                }
-            %>
-        </div>
-    </nav>
+    <%@include file="nav.jsp" %>
 
     <div class="row">
         <div class="panel panel-default" style="margin-top: 50px">
@@ -49,7 +22,9 @@
                 <div class="row">
                     <div class="col-md-2"><h1>Projet Ara</h1></div>
                     <div class="col-md-offset-8 col-md-1">
-                        <button class="btn btn-default btn-ara-buy">Acheter Kit à 299 €</button>
+                        <a href="/product">
+                            <button class="btn btn-default btn-ara-buy">Acheter Kit à 299 €</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -182,7 +157,7 @@
             <div>
 
                 <%
-                    if (flag){
+                    if (user.getConnect()){
                 %>
                 <form method="POST" action="/product/opinion">
                     <div class="form-group">

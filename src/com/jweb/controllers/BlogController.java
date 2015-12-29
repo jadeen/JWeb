@@ -39,6 +39,7 @@ public class BlogController extends javax.servlet.http.HttpServlet {
         articleModel.addArticle(article);
 
         user.settingCurrentUserData();
+        response.sendRedirect("/blog");
     }
 
     private void doGetBlog(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException{
@@ -46,13 +47,8 @@ public class BlogController extends javax.servlet.http.HttpServlet {
 
         UserModel user = new UserModel(request.getSession());
 
-        if (user.currentUser.getConnect()) {
-            request.setAttribute("isConnect", true);
-            user.settingCurrentUserData();
-            request.setAttribute("name", user.getCompletName());
-        } else {
-            request.setAttribute("isConnect", false);
-        }
+        user.settingCurrentUserData();
+        request.setAttribute("user", user.currentUser);
 
         request.setAttribute("articles", articles.all());
 
@@ -61,6 +57,11 @@ public class BlogController extends javax.servlet.http.HttpServlet {
     }
 
     private void doGetCreate(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+        UserModel user = new UserModel(request.getSession());
+
+        user.settingCurrentUserData();
+        request.setAttribute("user", user.currentUser);
+
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/createBlog.jsp").forward
                 (request, response);
     }

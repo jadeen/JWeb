@@ -3,6 +3,8 @@ package com.jweb.models;
 import com.jweb.beans.Article;
 import com.jweb.tools.SqlManager;
 
+import java.lang.annotation.ElementType;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +30,7 @@ public class ArticleModel {
         try {
             ResultSet res = sm.executeQuery("SELECT Nom, Prenom,"
                     + "Title, Content, IdArticle FROM Articles AS a"
-                    + " LEFT JOIN Users AS u ON u.IdUser = a.IdUser");
+                    + " LEFT JOIN Users AS u ON u.IdUser = a.IdUser ORDER By IdArticle desc");
 
             while (res.next()){
                 Article article = new Article();
@@ -53,11 +55,18 @@ public class ArticleModel {
 
         sm.openConnection();
 
-        sm.execute("INSERT INTO Articles (Title, Content, IdUser) VALUES"
-                + "('"+element.getTitle()+"',"
-                + "'"+element.getContent()+"',"
-                + ""+element.getIdAuthor()+")");
+        try {
+            PreparedStatement preparedStatement = sm.prepareStatement("INSERT INTO Articles (Title, Content, IdUser) VALUES(?,?,?)");
 
+            preparedStatement.setString(1, element.getTitle());
+            preparedStatement.setString(2, element.getContent());
+            preparedStatement.setInt(3, element.getIdAuthor());
+
+            sm.execute(preparedStatement);
+        }
+        catch (Exception e){
+            System.err.println(e);
+        }
         sm.closeConnection();
     }
 }
