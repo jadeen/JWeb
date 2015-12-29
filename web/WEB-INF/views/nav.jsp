@@ -25,11 +25,11 @@
             else {
                 if (user.getAdmin()){
             %>
-                <a href="/blog/create" class="navbar-link">
+                <a href="/blog/create" class="navbar-link navbar-space">
                     <span class="glyphicon glyphicon-plus"></span> Crée un article
                 </a>
 
-                <a href="/profil/admin" class="navbar-link">
+                <a href="/profil/admin" class="navbar-link navbar-space">
                     <span class="glyphicon glyphicon-globe"></span> Gérer les utilisateurs
                 </a>
                     <%
