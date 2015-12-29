@@ -20,7 +20,7 @@
 
     <p class="big-space"></p>
 
-    <h1 class="text-center">Gérer vos utilisateur</h1>
+    <h1 class="text-center">Gérer vos utilisateurs</h1>
 
     <div class="row">
         <div class="container">
@@ -49,7 +49,7 @@
                         <td><% out.println(a.getMail()); %></td>
                         <td class="btn-group">
                             <a href="/profil/delete?id=<%= a.getId()%>">
-                                <button title="supprimer l'utilisateur" class="btn btn-danger">
+                                <button title="Supprimer l'utilisateur" class="btn btn-danger">
                                     <span class="glyphicon glyphicon-remove"></span>
                                 </button>
                             </a>
@@ -58,7 +58,7 @@
 
                             %>
                             <a href="/profil/switch/status?id=<%= a.getId()%>">
-                                <button title="enlever privilège admin" class="btn btn-primary">
+                                <button title="Enlever privilèges administrateur" class="btn btn-primary">
                                     <span class="glyphicon glyphicon-pawn"></span>
                                 </button>
                             </a>
@@ -68,7 +68,7 @@
 
                             %>
                             <a href="/profil/switch/status?id=<%= a.getId()%>">
-                                <button href="/plop" title="mettre privilège admin" class="btn btn-primary">
+                                <button href="/plop" title="Donner privilèges administrateur" class="btn btn-primary">
                                     <span class="glyphicon glyphicon-tower"></span>
                                 </button>
                             </a>

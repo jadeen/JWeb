@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Projet Ara - Crée Article</title>
+    <title>Projet Ara - Ajouter un article</title>
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css" />
 </head>

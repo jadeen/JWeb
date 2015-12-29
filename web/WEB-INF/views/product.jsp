@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-6" style="margin-top: 20%;">
                 <h1>Téléphone Ara: le pack à 299 €</h1>
-                <h4>Le schassis et les blocs de composant</h4>
+                <h4>Le chassis et les blocs de composant</h4>
                 <button class="btn btn-ara-buy center-block">Acheter</button>
             </div>
         </div>
@@ -35,7 +35,7 @@
 
     <div class="row">
         <div class="container">
-            <h3>Paramètre De Base</h3>
+            <h3>Paramètres De Base</h3>
             <div class="col-md-6">
                 <div class="row">
                     <div class="container-fluid">
@@ -63,11 +63,11 @@
                         <p class="col-md-7">Qualcomm® Adreno™ 330</p>
                     </div>
                     <div class="container-fluid">
-                        <h5 class="col-md-5" style="margin: 0px;">Mémoire vive</h5>
+                        <h5 class="col-md-5" style="margin: 0px;">Mémoire vive:</h5>
                         <p class="col-md-7">LPDDR3 3 Go</p>
                     </div>
                     <div class="container-fluid">
-                        <h5 class="col-md-5" style="margin: 0px;">Stockage</h5>
+                        <h5 class="col-md-5" style="margin: 0px;">Stockage:</h5>
                         <p class="col-md-7">16 Go eMMC v5.0 </p>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="container-fluid">
                         <h5 class="col-md-5" style="margin: 0px;">Radio FM:</h5>
-                        <p class="col-md-7">Yes</p>
+                        <p class="col-md-7">Oui</p>
                     </div>
                 </div>
             </div>
@@ -201,8 +201,8 @@
                         <p class="col-md-7">
                             Bouton Power<br/>
                             Boutons Volume<br/>
-                            Alert Slider<br/>
-                            Boutons capacitif / sur écran
+                            Slider d'alerte<br/>
+                            Boutons capacitifs / sur écran
                         </p>
                     </div>
                     <div class="container-fluid">
@@ -215,7 +215,7 @@
                 <h3>Appareil photo</h3>
                 <div class="row">
                     <div class="container-fluid">
-                        <h5 class="col-md-5" style="margin: 0px;">Back Camera:</h5>
+                        <h5 class="col-md-5" style="margin: 0px;">Caméra arrière:</h5>
                         <p class="col-md-7">13 MP</p>
                     </div>
                     <div class="container-fluid">
@@ -235,7 +235,7 @@
                         <p class="col-md-7">Résolution vidéo 1080p</p>
                     </div>
                     <div class="container-fluid">
-                        <h5 class="col-md-5" style="margin: 0px;">ralentis :</h5>
+                        <h5 class="col-md-5" style="margin: 0px;">Ralentis :</h5>
                         <p class="col-md-7">720p vidéo à 120ips</p>
                     </div>
                 </div>
@@ -249,14 +249,14 @@
                 <h3>Multimédia</h3>
                 <div class="row">
                     <div class="container-fluid">
-                        <h5 class="col-md-5" style="margin: 0px;">Formats Audio Pris en Charge:</h5>
+                        <h5 class="col-md-5" style="margin: 0px;">Formats Audio pris en Charge:</h5>
                         <p class="col-md-7">
                             Playback: MP3, AAC, AAC+, WMA (v9 and v10), AMR-NB, AMR-WB, WAV, FLAC, WAV, OGG<br/>
                             Recording: WAV AAC AMR EVRC QCELP
                         </p>
                     </div>
                     <div class="container-fluid">
-                        <h5 class="col-md-5" style="margin: 0px;">Formats Vidéo Pris en Charge:</h5>
+                        <h5 class="col-md-5" style="margin: 0px;">Formats Vidéo pris en Charge:</h5>
                         <p class="col-md-7">
                             Playback: HEVC (H.265), H.264, MPEG-4, DivX, Xvid, MPEG-2, MP4, MOV, 3GP, AVI, MKV, ASF<br/>
                             Recording: AVC
@@ -273,13 +273,13 @@
             </div>
             <div class="col-md-6">
                 <h3>Dans le pack</h3>
-                <p>1x telephone Ara pack edition</p>
-                <p>1x câble Micro-USB</p>
-                <p>1x chargeur</p>
-                <p>1x housse de protection</p>
-                <p>1x éjecteur de carte SIM</p>
-                <p>1x guide de démarrage rapide</p>
-                <p>1x guide utilisateur</p>
+                <p>1x Télephone Ara Pack Edition</p>
+                <p>1x Câble Micro-USB</p>
+                <p>1x Chargeur</p>
+                <p>1x Housse de protection</p>
+                <p>1x Éjecteur de carte SIM</p>
+                <p>1x Guide de démarrage rapide</p>
+                <p>1x Guide utilisateur</p>
             </div>
         </div>
     </div>

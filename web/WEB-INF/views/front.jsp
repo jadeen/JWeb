@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Projat Ara</title>
+    <title>Projet Ara</title>
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css" />
 </head>
@@ -47,8 +47,8 @@
             <div class="col-md-8">
                 <h2 style="margin-top: 0px">Lancement de la première boutique Ara en Californie</h2>
                 <p style="text-align: justify">
-                    Pour accompagné le lancement de leur tout nouvelle game de produit. Google à l'honneur d'annoncer la création de la toute premier boutique Ara.Elle permettra a chaque client de venir
-                    et de repartir en moins de 5 minute de leur téléphone en quitte fonctionnel. Nous nous somme associer avec tout les operateurs du pays pour permettre la creation d'une toute nouvelle
+                    Pour accompagner le lancement de leur toute nouvelle gamme de produit. Google a l'honneur d'annoncer la création de la toute première boutique Ara. Elle permettra à chaque client de venir
+                    et de repartir en moins de 5 minute avec leur téléphone en kit fonctionnel. Nous nous somme associés avec tous les opérateurs du pays pour permettre la creation d'une toute nouvelle
                     manière d'acheter un téléphone.
                 </p>
             </div>
@@ -60,18 +60,19 @@
                 <img style="width:600px" src="<%=request.getContextPath()%>/resources/img/block-ara.jpg"/>
             </div>
             <div class="col-md-4">
-                <h3 style="margin-top: 100px">Une selection modulaire</h3>
+                <h3 style="margin-top: 100px">Une sélection modulaire</h3>
                 <p style="text-align: justify">
-                    Avec le projet Ara, vous pourez choisir en temps réel les modules ajouté sur votre ordinateur. Vous pourez aussi ajouter et enlever des fonctionnalités pendant que vous l'utilisé.
+                    La force du projet Ara est de pouvoir personnaliser les composants de votre téléphone par un système de module.
+                    Vous pourrez choisir en temps réel les modules de votre téléphone, depuis votre ordinateur. Vous pourrez aussi ajouter et supprimer des fonctionnalités pendant que vous l'utilisez.
                 </p>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="container">
-            <h3 class="text-center">Diférrente taile de device</h3>
+            <h3 class="text-center">Diférrentes tailles d'appareils</h3>
             <p class="text-center">
-                Vous pourrez choissir le socle de votre projet Ara en fonction de 3 taile différente. Chaque taile permettant un ajout limité de module.
+                Vous pourrez choissir le socle de votre projet Ara en fonction de 3 tailles différentes. Chaque taile permettant un ajout limité de modules.
             </p>
             <img class="picture-center" src="<%=request.getContextPath()%>/resources/img/size-ara.jpg"/>
         </div>
@@ -80,10 +81,10 @@
     <div class="row ara-setting">
         <div class="container">
             <h3>Aperçu</h3>
-            <p>Design 100% metal, materiaux de qualité garantice une grand solidité des modules. Le tout tournant sur la dernier monture android(Android 6.0 Marshmallow)</p>
+            <p>Design 100% metal, matériaux de qualité garantissant une grande solidité des modules. Le tout fonctionnant avec la dernière version d'Android (Android 6.0 Marshmallow)</p>
             <div class="row">
                 <div class="col-md-6">
-                    <h3>Un module personalisé</h3>
+                    <h3>Un module personnalisé</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
                         Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
@@ -92,7 +93,7 @@
                         Pellentesque nec rhoncus dui. Nam volutpat justo sed consequat euismod. Fusce fringilla erat ut elit molestie molestie.
                         Suspendisse consectetur elit quis arcu blandit cursus. Duis pellentesque viverra felis at feugiat.
                     </p>
-                    <h3>Des performance Equivalente</h3>
+                    <h3>Des performances équivalentes</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
                         Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
@@ -103,7 +104,7 @@
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <h3>Un grand choix de fonctionnalité</h3>
+                    <h3>Un grand choix de fonctionnalités</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
                         Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
@@ -112,7 +113,7 @@
                         Pellentesque nec rhoncus dui. Nam volutpat justo sed consequat euismod. Fusce fringilla erat ut elit molestie molestie.
                         Suspendisse consectetur elit quis arcu blandit cursus. Duis pellentesque viverra felis at feugiat.
                     </p>
-                    <h3>Une stabilité a tout epreuve</h3>
+                    <h3>Une stabilité à toute épreuve</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
                         Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
@@ -128,7 +129,7 @@
 
     <div class="row ara-newsletter">
         <div class="container">
-            <h2>Recevoir nos Newsletter Regulière !!</h2>
+            <h2>Recevoir nos Newsletters regulières !!</h2>
             <div class="input-group col-md-offset-1 col-md-10">
                 <form class="form-inline" action="/product/newsletter" method="POST">
                     <div class="form-group">
@@ -143,7 +144,7 @@
 
     <div class="row ara-talk">
         <div class="container">
-            <h2 class="text-center">Il parle de nous !</h2>
+            <h2 class="text-center">Ils parlent de nous !</h2>
             <p class="text-center">
                 <% String res = (String) request.getAttribute("opinionText");
                     if (res == null){
@@ -167,13 +168,13 @@
                         </textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-default">Envoyez</button>
+                        <button type="submit" class="btn btn-default">Envoyer</button>
                     </div>
                 </form>
                 <%
                     }else{
                 %>
-                <h4>Iddentifiez-vous sur le site pour donner votre avis</h4>
+                <h4>Identifiez-vous sur le site pour donner votre avis</h4>
                 <% }%>
             </div>
         </div>

@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Projet Ara</title>
+    <title>Projet Ara - Profil</title>
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css" />
 </head>
@@ -26,7 +26,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
 
-                            <h1 class="text-center">Vos Information</h1>
+                            <h1 class="text-center">Vos Informations</h1>
                             <p class="space text-center">
                                 <Strong>Nom :</Strong>
                                 <span class="well-sm well">
@@ -35,7 +35,7 @@
                                 </span>
                             </p>
                             <p class="space text-center">
-                                <Strong>prenom :</Strong>
+                                <Strong>Prénom :</Strong>
                                 <span class="well-sm well">
                                 <%String _prenom =  user.getPrenom();
                                     out.println(_prenom);%>
@@ -49,7 +49,7 @@
                                 </span>
                             </p>
                             <p class="space text-center">
-                                <Strong>Addresse Mail :</Strong>
+                                <Strong>Adresse Mail :</Strong>
                                 <span class="well-sm well">
                                 <%String _mail =  user.getMail();
                                     out.println(_mail);%>
@@ -80,7 +80,7 @@
                 <div class="text-center">
                     <div class="btn-group">
                         <button class="btn  btn-primary">
-                            <a style="color: white" href="/profil/deconnect">Se déconnectez</a>
+                            <a style="color: white" href="/profil/deconnect">Se déconnecter</a>
                         </button>
                     </div>
                 </div>

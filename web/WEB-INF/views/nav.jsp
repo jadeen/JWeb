@@ -9,7 +9,7 @@
 <nav class="navbar navbar-default navbar-fixed-top bilboquet-navbar">
     <div class="container">
         <!--<a class="navbar-brand" href="#">Projet Ara</a>-->
-        <a class="navbar-brand" href="/">Acceuil</a>
+        <a class="navbar-brand" href="/">Accueil</a>
         <p class="navbar-text navbar-left">
             <a href="/blog">Blog</a>
         </p>
@@ -19,7 +19,7 @@
 
                 if (!user.getConnect()){
             %>
-            <a href="/profil" class="navbar-link">Se connectez/S'inscrire</a>
+            <a href="/profil" class="navbar-link">Se connecter / S'inscrire</a>
             <%
             }
             else {

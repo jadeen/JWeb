@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Inscription / Connection</title>
+    <title>Inscription / Connexion</title>
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css" />
 </head>
@@ -23,7 +23,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="col-md-6">
-                            <h3 class="text-center">Connection</h3>
+                            <h3 class="text-center">Connexion</h3>
                             <form method="post" name="connection" action="/profil/connect">
                                 <div class="form-group" >
                                     <label for="exampleInputEmail1">Login/Mail</label>
@@ -31,9 +31,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Mots de passe</label>
-                                    <input type="password" name="password" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                    <input type="password" name="password" class="form-control" id="exampleInputEmail1" placeholder="Mot de passe">
                                 </div>
-                                <button type="submit" class="btn btn-default center-block">Connection</button>
+                                <button type="submit" class="btn btn-default center-block">Connexion</button>
                             </form>
                         </div>
                         <div class="col-md-6">
@@ -41,7 +41,7 @@
                             <form method="post" name="inscription" action="/profil/inscription">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Login</label>
-                                    <input type="text" name="login" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                    <input type="text" name="login" class="form-control" id="exampleInputEmail1" placeholder="Login">
                                 </div>
 
                                 <div class="form-group">
@@ -52,11 +52,11 @@
                                 <div class="form-inline">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nom</label>
-                                        <input type="text" name="nom" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        <input type="text" name="nom" class="form-control" id="exampleInputEmail1" placeholder="Nom">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Prénom</label>
-                                        <input type="text" name="prenom" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        <input type="text" name="prenom" class="form-control" id="exampleInputEmail1" placeholder="Prénom">
                                     </div>
                                 </div>
 
@@ -65,10 +65,10 @@
                                 <div class="form-inline">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Mot de passe</label>
-                                        <input type="password" name="password" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        <input type="password" name="password" class="form-control" id="exampleInputEmail1" placeholder="Mot de passe">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" name="password2" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        <input type="password" name="password2" class="form-control" id="exampleInputEmail1" placeholder="Confirmation">
                                     </div>
                                 </div>
 
