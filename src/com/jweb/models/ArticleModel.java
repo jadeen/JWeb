@@ -3,25 +3,28 @@ package com.jweb.models;
 import com.jweb.beans.Article;
 import com.jweb.tools.SqlManager;
 
-import java.lang.annotation.ElementType;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 /**
- * Created by mickael on 12/21/2015.
+ * Object permettant un interraction directe avec la table SQLLITE articles
  */
 public class ArticleModel {
-    ArrayList<Article> data;
+    /**
+     * Variable permettant de ne récupere qu'une seul fois les articles par requete(si besoin)
+     */
+    public ArrayList<Article> data;
 
     public ArticleModel()
     {
     }
 
+    /**
+     * fonction permettant de recupere tous les articles en base de donnée
+     * @return un liste complete de beans article
+     */
     public ArrayList<Article> all() {
         SqlManager sm = SqlManager.getInstance();
 
@@ -53,6 +56,10 @@ public class ArticleModel {
         return this.data;
     }
 
+    /**
+     * fonction permettant l'ajout d'article en base de donnée
+     * @param element prend un parametre un object Article
+     */
     public void addArticle(Article element){
         SqlManager sm = SqlManager.getInstance();
 

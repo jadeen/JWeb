@@ -1,29 +1,34 @@
 package com.jweb.models;
 
+import com.jweb.beans.Opinion;
 import com.jweb.tools.SqlManager;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
- * Created by mickael on 12/20/2015.
+ * Object permettant un interraction directe avec la table SQLLITE Opinions
  */
 public class OpinionModel {
 
-    private Integer _count;
+    private ArrayList<Opinion> _data;
 
-    private ResultSet _data;
-
-    public String _text;
-
+    /**
+     * Constructeur de la classe
+     */
     public OpinionModel(){
-        _count = 0;
-        _data = null;
     }
 
-    public Boolean addUserOpinion(UserModel user, String opinion){
+    /**
+     * Fonction permettant d'ajouter une opinion sur notre produit
+     * @param user UserModel non permettant de recupere les informations de l'utilisateur connecter a notre site
+     * @param opinion String contenant l'opinion de l'utilisateur
+     * @return Flag pour savoir si l'operation a reussi
+     */
+    public boolean addUserOpinion(Opinion opinion){
         SqlManager sm = SqlManager.getInstance();
 
         sm.openConnection();
@@ -33,8 +38,8 @@ public class OpinionModel {
         try {
             PreparedStatement preparedStatement = sm.prepareStatement("INSERT INTO Opinions (IdUser, Opinion) VALUES(?,?)");
 
-            preparedStatement.setInt(1,user.currentUser.getId());
-            preparedStatement.setString(2, opinion);
+            preparedStatement.setInt(1,opinion.getIdUser());
+            preparedStatement.setString(2, opinion.getOpinion());
 
             ret = sm.execute(preparedStatement);
         }
@@ -47,54 +52,42 @@ public class OpinionModel {
         return (ret);
     }
 
-    public ResultSet countElement(){
+    public ArrayList<Opinion> all(){
+        SqlManager sm = SqlManager.getInstance();
 
-        if (_data == null) {
+        sm.openConnection();
 
-            SqlManager sm = SqlManager.getInstance();
+        _data = new ArrayList<Opinion>();
 
-            sm.openConnection();
+        try {
+            ResultSet res = sm.executeQuery("SELECT * FROM Opinions");
 
-            try {
-                _data = sm.executeQuery("SELECT * FROM Opinions "
-                        + "LEFT JOIN Users ON Opinions.IdUser = Users.IdUser");
-                while (_data.next()) {
-                    _count += 1;
-                }
-            } catch (Exception e) {
+            while (res.next()){
+                Opinion opinion = new Opinion();
 
+                opinion.setId(res.getInt("IdOpinion"));
+                opinion.setIdUser(res.getInt("IdUser"));
+                opinion.setOpinion(res.getString("Opinion"));
+
+                _data.add(opinion);
             }
-            sm.closeConnection();
         }
-        return (_data);
+        catch (Exception e){
+            System.err.println(e);
+        }
+        return _data;
     }
 
-    public ResultSet getRandomOpinion(){
-        ResultSet res = null;
+    /**
+     * Fonction permettant de retourner une opinion de manière aleatoire
+     * @return ResultSet contenant l'opinion
+     */
+    public Opinion getRandomOpinion(){
 
-        Integer index = (int)(Math.random() * (_count));
+        System.out.println(_data.size());
 
-        try{
-            SqlManager sm = SqlManager.getInstance();
+        Integer index = (int)(Math.random() * (_data.size()));
 
-            sm.openConnection();
-
-            _data = sm.executeQuery("SELECT * FROM Opinions "
-                    + "LEFT JOIN Users ON Opinions.IdUser = Users.IdUser");
-
-            Integer i = 0;
-            while (_data.next()){
-                if (i.equals(index)){
-                    _text = _data.getString("Opinion");
-                }
-                i++;
-            }
-
-            sm.closeConnection();
-        }
-        catch(Exception e){
-            System.out.println("1"+e.getMessage());
-        }
-        return (res);
+        return _data.get(index);
     }
 }

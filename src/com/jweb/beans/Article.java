@@ -3,7 +3,9 @@ package com.jweb.beans;
 import java.util.Date;
 
 /**
- * Created by mickael on 12/21/2015.
+ * Article est un class JAVA de type beans,
+ * elle a été construit de manière a ne contenir que des getter/setter
+ * au sein du projet elle nous sert de conteneur pour nos article facilitant le travail des differentes autres parties du programme
  */
 public class Article {
 

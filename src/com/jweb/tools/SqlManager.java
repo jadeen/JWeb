@@ -3,7 +3,7 @@ package com.jweb.tools;
 import java.sql.*;
 
 /**
- * Created by Kevin Marrec on 12/15/2015.
+ * Singlethon permettent une encapsulation complete SQL lite
  */
 public class SqlManager {
 
@@ -17,6 +17,10 @@ public class SqlManager {
         initDatabase();
     }
 
+    /**
+     * Permettant de récupere l'unique instance de SqlMmanager
+     * @return l'instance de SqlManager
+     */
     public static SqlManager getInstance() {
         if(_instance == null) {
             _instance = new SqlManager();
@@ -24,6 +28,9 @@ public class SqlManager {
         return _instance;
     }
 
+    /**
+     * Permet d'initialisé tous les tables
+     */
     private void initDatabase()
     {
         openConnection();
@@ -64,6 +71,11 @@ public class SqlManager {
         closeConnection();
     }
 
+    /**
+     * Fonction permettant de gérer les Injections SQL
+     * @param sql String contenant la requete SQL a preparer
+     * @return PreparedStatement de notre SQL
+     */
     public PreparedStatement prepareStatement(String sql){
         if (_connection == null){
             return null;
@@ -78,6 +90,10 @@ public class SqlManager {
         }
     }
 
+    /**
+     * Ouvre la connection avec notre base de donnée
+     * @return Boolean permettent de dire si la connection a marcher
+     */
     public boolean openConnection()
     {
         try
@@ -99,6 +115,10 @@ public class SqlManager {
         return true;
     }
 
+    /**
+     * ferme la connection avec notre base de donnée
+     * @return Boolean permettent de dire si la deconnection a marcher
+     */
     public boolean closeConnection()
     {
         try
@@ -115,6 +135,11 @@ public class SqlManager {
         return true;
     }
 
+    /**
+     * Permet de faire les requete de type UPDATE, INSERT INTO, CREATE TABLE
+     * @param query String contenant la requete a execute
+     * @return Boolean permettent de savoir si l'operation a marché
+     */
     public boolean execute(String query)
     {
         if (_connection == null)
@@ -133,24 +158,11 @@ public class SqlManager {
         }
     }
 
-    public int executeUpdate(String query)
-    {
-        if (_connection == null)
-            return -1;
-
-        try
-        {
-            Statement statement = _connection.createStatement();
-            return statement.executeUpdate(query);
-        }
-        catch(SQLException e)
-        {
-            System.err.println(e);
-            return -1;
-        }
-    }
-
-
+    /**
+     * Permet de faire des select avec une preparedStatement
+     * @param preparedStatement La requete prepare a executer
+     * @return ResultSet contenant le resultat de la requete
+     */
     public ResultSet executeQuery(PreparedStatement preparedStatement)
     {
         if (_connection == null)
@@ -166,6 +178,12 @@ public class SqlManager {
             return null;
         }
     }
+
+    /**
+     * Permet de faire de l'instruction SQL select
+     * @param query String contenant la requete sql a éxecuté
+     * @return ResultSet contenant le resultat de la requete
+     */
     public ResultSet executeQuery(String query)
     {
         if (_connection == null)
@@ -183,6 +201,11 @@ public class SqlManager {
         }
     }
 
+    /**
+     * Permet de faire les requete de type UPDATE, INSERT INTO, CREATE TABLE
+     * @param preparedStatement La requete prepare a executer
+     * @return Boolean permettent de savoir si l'operation a marché
+     */
     public boolean execute(PreparedStatement preparedStatement){
         if (_connection == null){
             return false;

@@ -1,4 +1,5 @@
-<%@ page import="java.sql.ResultSet" %><%--
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="com.jweb.beans.Opinion" %><%--
   Created by IntelliJ IDEA.
   User: Kevin Marrec
   Date: 12/14/2015
@@ -132,11 +133,14 @@
             <h2>Recevoir nos Newsletters regulières !!</h2>
             <div class="input-group col-md-offset-1 col-md-10">
                 <form class="form-inline" action="/product/newsletter" method="POST">
-                    <div class="form-group">
-                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                        <input type="email" name="mail" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" placeholder="Addresse Mail" aria-describedby="basic-addon2">
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn" type="submit">Envoyer</button>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-default">Sign in</button>
                 </form>
             </div>
         </div>
@@ -146,11 +150,11 @@
         <div class="container">
             <h2 class="text-center">Ils parlent de nous !</h2>
             <p class="text-center">
-                <% String res = (String) request.getAttribute("opinionText");
+                <% Opinion res = (Opinion) request.getAttribute("opinion");
                     if (res == null){
                         out.println("Aucun avis pour le moment !");
                     }else {
-                        out.println(res);
+                        out.println(res.getOpinion());
                     }
                 %>
             </p>

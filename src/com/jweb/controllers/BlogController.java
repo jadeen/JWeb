@@ -8,13 +8,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
+/**
+ * Java Servlet
+ */
 @WebServlet(name = "BlogController", urlPatterns = {"/blog/*"})
 public class BlogController extends javax.servlet.http.HttpServlet {
+    /** Define pour l'url /blog */
     static final String HOME = "/blog";
+    /** Define pour l'url /blog/creqte */
     static final String CREATE = "/blog/create";
 
+    /**
+     * doPost est une method appelé par les servlets JAVA en cas de requête de type post avec une url commencent par /blog
+     * @param request variable de type HttpServletRequest
+     * @param response variable de type HttpServletReponse
+     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
+     * @throws java.io.IOException genere des execption Java
+     */
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
 
         switch (request.getRequestURI()){
@@ -23,6 +33,13 @@ public class BlogController extends javax.servlet.http.HttpServlet {
         }
     }
 
+    /**
+     * Fonction appeler en cas de requete de type POST vers l'url /blog/create par la fonction doPost()
+     * @param request variable de type HttpServletRequest
+     * @param response variable de type HttpServletReponse
+     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
+     * @throws java.io.IOException genere des execption Java
+     */
     private void doPostCreate(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
 
@@ -42,6 +59,13 @@ public class BlogController extends javax.servlet.http.HttpServlet {
         response.sendRedirect("/blog");
     }
 
+    /**
+     * Fonction appeler en cas de requete de type GET vers l'url /blog par la fonction doGet()
+     * @param request variable de type HttpServletRequest
+     * @param response variable de type HttpServletReponse
+     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
+     * @throws java.io.IOException genere des execption Java
+     */
     private void doGetBlog(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException{
         ArticleModel articles = new ArticleModel();
 
@@ -56,16 +80,35 @@ public class BlogController extends javax.servlet.http.HttpServlet {
                 (request, response);
     }
 
+    /**
+     * Fonction appeler en cas de requete de type GET vers l'url /blog/create par la fonction doGet()
+     * @param request variable de type HttpServletRequest
+     * @param response variable de type HttpServletReponse
+     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
+     * @throws java.io.IOException genere des execption Java
+     */
     private void doGetCreate(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
 
         user.settingCurrentUserData();
         request.setAttribute("user", user.currentUser);
 
-        this.getServletContext().getRequestDispatcher("/WEB-INF/views/createBlog.jsp").forward
-                (request, response);
+        if (user.currentUser.getConnect() && user.currentUser.getAdmin()) {
+            this.getServletContext().getRequestDispatcher("/WEB-INF/views/createBlog.jsp").forward
+                    (request, response);
+        }
+        else {
+            response.sendRedirect("/blog");
+        }
     }
 
+    /**
+     * doGet est une method appelé par les servlets JAVA en cas de requête de type Get avec une url commencent par /blog
+     * @param request variable de type HttpServletRequest
+     * @param response variable de type HttpServletReponse
+     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
+     * @throws java.io.IOException genere des execption Java
+     */
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
 
         String url = request.getRequestURI();

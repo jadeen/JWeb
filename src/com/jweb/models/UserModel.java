@@ -11,13 +11,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * Created by mickael on 12/19/2015.
+ * Object permettant un interraction directe avec la table SQLLITE UserModel
  */
 public class UserModel {
+    /**
+     * Contient l'utilisateur actifs sur le site
+     */
     public User currentUser;
 
-    private Boolean _connected = false;
-
+    /**
+     * Contient une instance de HttpSession nous permettent de recupere l'utilisateur actif
+     */
     private HttpSession _session;
 
     public UserModel(HttpSession session){
@@ -31,6 +35,10 @@ public class UserModel {
         this.currentUser.setConnect(true);
     }
 
+    /**
+     * Permet de recupere les informations de l'utilisateur actifs sur le site
+     * @return Boolean pour savoir si l'operation a reussi ou non
+     */
     public Boolean settingCurrentUserData(){
         SqlManager sm = SqlManager.getInstance();
 
@@ -62,12 +70,21 @@ public class UserModel {
         return (true);
     }
 
+    /**
+     * Fonction permettant de setter les informations de base du l'utilisateur courrent
+     * @param login String
+     * @param password String
+     */
     public void setCurrentUser(String login, String password){
         currentUser = new User();
         currentUser.setLogin(login);
         currentUser.setPassword(password);
     }
 
+    /**
+     * Permet de connecter un utilisateur a notre site internet
+     * @return Boolean pour savoir si l'operation a reussi ou non
+     */
     public Boolean ConnectUser(){
         SqlManager sm = SqlManager.getInstance();
 
@@ -94,6 +111,11 @@ public class UserModel {
         return (true);
     }
 
+    /**
+     * Permet de savoir si le login n'existe pas déjà
+     * @param login String contenant le login a tester
+     * @return Boolean contenant le resultat du test
+     */
     public Boolean isExist(String login){
         SqlManager sm = SqlManager.getInstance();
 
@@ -116,7 +138,12 @@ public class UserModel {
         return (false);
     }
 
-    public Boolean createUser(String nom, String prenom, String mail, String login, String password){
+    /**
+     * FOnction permettent de cree un nouveau utilisateur dans la base de donnée
+     * @param user class User contenant les informations de l'utilisateur
+     * @return Boolean contenant le resultat de l'ajout en base de donnée
+     */
+    public Boolean createUser(User user){
         SqlManager sm = SqlManager.getInstance();
 
         sm.openConnection();
@@ -124,11 +151,11 @@ public class UserModel {
         try {
             PreparedStatement preparedStatement = sm.prepareStatement("INSERT INTO Users (Nom, Prenom, Mail, Login, Password) VALUES(?,?,?,?,?)");
 
-            preparedStatement.setString(1,nom);
-            preparedStatement.setString(2,prenom);
-            preparedStatement.setString(3,mail);
-            preparedStatement.setString(4,login);
-            preparedStatement.setString(5,password);
+            preparedStatement.setString(1,user.getNom());
+            preparedStatement.setString(2,user.getPrenom());
+            preparedStatement.setString(3,user.getMail());
+            preparedStatement.setString(4,user.getLogin());
+            preparedStatement.setString(5,user.getPassword());
             Boolean ret = sm.execute(preparedStatement);
             sm.closeConnection();
             return ret;
@@ -140,6 +167,10 @@ public class UserModel {
         }
     }
 
+    /**
+     * Fonction permettent de retourne la liste des utilisateur
+     * @return Liste de tout les utilisateurs
+     */
     public ArrayList<User> all(){
         ArrayList<User> data = new ArrayList<User>();
 
@@ -172,6 +203,10 @@ public class UserModel {
         return data;
     }
 
+    /**
+     * Fonctin permettant de suprimer un utilisateur
+     * @param Id String contenant l'id de l'utilisateur
+     */
     public void delete(String Id){
         SqlManager sm = SqlManager.getInstance();
 
@@ -190,6 +225,10 @@ public class UserModel {
         sm.closeConnection();
     }
 
+    /**
+     * fonction permettant de changer le status de l'utilisateur simple utilisateur/administrateur
+     * @param id String contenant l'id de l'utilisateur qui a besoin de changer de status
+     */
     public void switchStatus(String id){
         SqlManager sm = SqlManager.getInstance();
 
@@ -217,9 +256,5 @@ public class UserModel {
         }
 
         sm.closeConnection();
-    }
-
-    public String getCompletName(){
-        return this.currentUser.getPrenom() + " " + this.currentUser.getNom();
     }
 }

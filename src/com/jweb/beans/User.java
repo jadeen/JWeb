@@ -1,7 +1,9 @@
 package com.jweb.beans;
 
 /**
- * Created by mickael on 12/21/2015.
+ * User est un class JAVA de type beans,
+ * elle a été construit de manière a ne contenir que des getter/setter
+ * au sein du projet elle nous sert de conteneur pour nos utilisateur facilitant le travail des differentes autres parties du programme
  */
 public class User {
     private String login;
