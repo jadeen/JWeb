@@ -86,8 +86,11 @@ public class OpinionModel {
 
         System.out.println(_data.size());
 
-        Integer index = (int)(Math.random() * (_data.size()));
-
-        return _data.get(index);
+        if (_data.size() != 0){
+            Integer index = (int)(Math.random() * (_data.size()));
+            return _data.get(index);
+        }else {
+            return null;
+        }
     }
 }
