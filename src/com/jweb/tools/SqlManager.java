@@ -3,7 +3,7 @@ package com.jweb.tools;
 import java.sql.*;
 
 /**
- * Singlethon permettent une encapsulation complete SQL lite
+ * Singleton permettant une encapsulation complète de SQL Lite
  */
 public class SqlManager {
 
@@ -18,7 +18,7 @@ public class SqlManager {
     }
 
     /**
-     * Permettant de récupere l'unique instance de SqlMmanager
+     * Permet de récupérer l'unique instance de SqlMmanager
      * @return l'instance de SqlManager
      */
     public static SqlManager getInstance() {
@@ -29,7 +29,7 @@ public class SqlManager {
     }
 
     /**
-     * Permet d'initialisé tous les tables
+     * Permet d'initialiser toutes les tables
      */
     private void initDatabase()
     {
@@ -91,8 +91,8 @@ public class SqlManager {
     }
 
     /**
-     * Ouvre la connection avec notre base de donnée
-     * @return Boolean permettent de dire si la connection a marcher
+     * Ouvre la connexion avec notre base de données
+     * @return Boolean permettant de savoir si la connection a fonctionné
      */
     public boolean openConnection()
     {
@@ -116,8 +116,8 @@ public class SqlManager {
     }
 
     /**
-     * ferme la connection avec notre base de donnée
-     * @return Boolean permettent de dire si la deconnection a marcher
+     * Ferme la connexion avec notre base de données
+     * @return Boolean permettant de savoir si la déconnexion a fonctionné
      */
     public boolean closeConnection()
     {
@@ -136,9 +136,9 @@ public class SqlManager {
     }
 
     /**
-     * Permet de faire les requete de type UPDATE, INSERT INTO, CREATE TABLE
-     * @param query String contenant la requete a execute
-     * @return Boolean permettent de savoir si l'operation a marché
+     * Permet de faire les requêtes de type UPDATE, INSERT INTO, CREATE TABLE
+     * @param query String contenant la requête à exécuter
+     * @return Boolean permettant de savoir si l'opération a fonctionné
      */
     public boolean execute(String query)
     {
@@ -159,9 +159,9 @@ public class SqlManager {
     }
 
     /**
-     * Permet de faire des select avec une preparedStatement
-     * @param preparedStatement La requete prepare a executer
-     * @return ResultSet contenant le resultat de la requete
+     * Permet de faire des select avec un preparedStatement
+     * @param preparedStatement La requête prepare à exécuter
+     * @return ResultSet contenant le résultat de la requête
      */
     public ResultSet executeQuery(PreparedStatement preparedStatement)
     {
@@ -180,9 +180,9 @@ public class SqlManager {
     }
 
     /**
-     * Permet de faire de l'instruction SQL select
-     * @param query String contenant la requete sql a éxecuté
-     * @return ResultSet contenant le resultat de la requete
+     * Permet de faire l'instruction SQL select
+     * @param query String contenant la requête sql à exécuter
+     * @return ResultSet contenant le résultat de la requête
      */
     public ResultSet executeQuery(String query)
     {
@@ -202,9 +202,9 @@ public class SqlManager {
     }
 
     /**
-     * Permet de faire les requete de type UPDATE, INSERT INTO, CREATE TABLE
-     * @param preparedStatement La requete prepare a executer
-     * @return Boolean permettent de savoir si l'operation a marché
+     * Permet de faire les requêtes de type UPDATE, INSERT INTO, CREATE TABLE
+     * @param preparedStatement La requête prepare à exécuter
+     * @return Boolean permettent de savoir si l'operation a fonctionné
      */
     public boolean execute(PreparedStatement preparedStatement){
         if (_connection == null){

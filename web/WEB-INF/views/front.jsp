@@ -73,7 +73,9 @@
         <div class="container">
             <h3 class="text-center">Diférrentes tailles d'appareils</h3>
             <p class="text-center">
-                Vous pourrez choissir le socle de votre projet Ara en fonction de 3 tailles différentes. Chaque taile permettant un ajout limité de modules.
+                Google a prévu trois tailles différentes d’endosquelette, avec des écrans entre 3 et 6 pouces. <br/>
+                Chaque appareil pourra recevoir un nombre de modules différents,
+                tandis que certains modules ne fonctionneront qu’avec le grand « endosquelette ».
             </p>
             <img class="picture-center" src="<%=request.getContextPath()%>/resources/img/size-ara.jpg"/>
         </div>
@@ -83,45 +85,34 @@
         <div class="container">
             <h3>Aperçu</h3>
             <p>Design 100% metal, matériaux de qualité garantissant une grande solidité des modules. Le tout fonctionnant avec la dernière version d'Android (Android 6.0 Marshmallow)</p>
+           <div class="row">
+               <div class="container">
+                   <h3>Une personnalisation unique</h3>
+                   <p>
+                       A terme, le projet Ara doit permettre de choisir chaque module, son emplacement, ainsi que sa couleur et son design.
+                       Cela offre une énorme souplesse tant en termes de personnalisation de la configuration que de coût.
+                       Les éléments les plus élaborés coûteront le plus cher. Pour les utilisateurs ayant un budget défini,
+                       le fait de pouvoir élaborer sa configuration et de choisir les fonctions prioritaires ou non,
+                       permet de cibler les modules sur lesquels on veut investir et ceux où l’on veut économiser.
+                       Par exemple, on peut vouloir un écran haute définition et n'avoir que faire de fonctions photo avancées.
+                   </p>
+               </div>
+           </div>
             <div class="row">
                 <div class="col-md-6">
-                    <h3>Un module personnalisé</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
-                        Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
-                        Fusce vel tempor ante, molestie lobortis enim. Sed mattis mattis suscipit. Morbi porttitor dolor quis nibh commodo consequat.
-                        Sed pretium id felis a aliquam. Vestibulum aliquet vitae velit ac tristique. In fermentum hendrerit urna, ut tristique orci tincidunt vitae.
-                        Pellentesque nec rhoncus dui. Nam volutpat justo sed consequat euismod. Fusce fringilla erat ut elit molestie molestie.
-                        Suspendisse consectetur elit quis arcu blandit cursus. Duis pellentesque viverra felis at feugiat.
-                    </p>
                     <h3>Des performances équivalentes</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
-                        Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
-                        Fusce vel tempor ante, molestie lobortis enim. Sed mattis mattis suscipit. Morbi porttitor dolor quis nibh commodo consequat.
-                        Sed pretium id felis a aliquam. Vestibulum aliquet vitae velit ac tristique. In fermentum hendrerit urna, ut tristique orci tincidunt vitae.
-                        Pellentesque nec rhoncus dui. Nam volutpat justo sed consequat euismod. Fusce fringilla erat ut elit molestie molestie.
-                        Suspendisse consectetur elit quis arcu blandit cursus. Duis pellentesque viverra felis at feugiat.
+                        En comparaison aux smartphones classiques, le ration qualité/prix reste équivalent,
+                        mais avec un avantage énorme : celui de pouvoir choisir quels composants l'on veut mettre et
+                        donc pouvoir consacrer une plus grande partie du budget à certaines fonctionnalités.
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <h3>Un grand choix de fonctionnalités</h3>
+                    <h3>Un smartphone celon votre humeur</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
-                        Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
-                        Fusce vel tempor ante, molestie lobortis enim. Sed mattis mattis suscipit. Morbi porttitor dolor quis nibh commodo consequat.
-                        Sed pretium id felis a aliquam. Vestibulum aliquet vitae velit ac tristique. In fermentum hendrerit urna, ut tristique orci tincidunt vitae.
-                        Pellentesque nec rhoncus dui. Nam volutpat justo sed consequat euismod. Fusce fringilla erat ut elit molestie molestie.
-                        Suspendisse consectetur elit quis arcu blandit cursus. Duis pellentesque viverra felis at feugiat.
-                    </p>
-                    <h3>Une stabilité à toute épreuve</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisl ligula, consequat fringilla viverra id, suscipit sed
-                        Integer a dui eget sapien aliquam tempor. Donec vitae lacinia quam. Donec et enim varius, lacinia lacus ac, aliquet massa.
-                        Fusce vel tempor ante, molestie lobortis enim. Sed mattis mattis suscipit. Morbi porttitor dolor quis nibh commodo consequat.
-                        Sed pretium id felis a aliquam. Vestibulum aliquet vitae velit ac tristique. In fermentum hendrerit urna, ut tristique orci tincidunt vitae.
-                        Pellentesque nec rhoncus dui. Nam volutpat justo sed consequat euismod. Fusce fringilla erat ut elit molestie molestie.
-                        Suspendisse consectetur elit quis arcu blandit cursus. Duis pellentesque viverra felis at feugiat.
+                        Pour les plus grands adeptes de Ara, rien ne vous empêche de changer vos modules en cours de journée,
+                        pour ainsi avoir une utilisation unique de votre smartphone.
+                        En quelques secondes, vous pourrez remplacer votre appareil photo par plus de mémoire vive pour jouer à un jeu vidéo dans une plus grand confort !
                     </p>
                 </div>
             </div>
@@ -130,12 +121,12 @@
 
     <div class="row ara-newsletter">
         <div class="container">
-            <h2>Recevoir nos Newsletters regulières !!</h2>
+            <h2>Recevoir nos Newsletters régulières !!</h2>
             <div class="input-group col-md-offset-1 col-md-10">
                 <form class="form-inline" action="/product/newsletter" method="POST">
                     <div class="row">
                         <div class="col-md-10">
-                            <input type="text" class="form-control" placeholder="Addresse Mail" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="Adresse Mail" aria-describedby="basic-addon2">
                         </div>
                         <div class="col-md-2">
                             <button class="btn" type="submit">Envoyer</button>
@@ -178,7 +169,7 @@
                 <%
                     }else{
                 %>
-                <h4>Identifiez-vous sur le site pour donner votre avis</h4>
+                <h4 class="text-center">Identifiez-vous sur le site pour donner votre avis</h4>
                 <% }%>
             </div>
         </div>

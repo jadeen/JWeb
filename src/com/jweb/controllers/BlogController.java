@@ -19,14 +19,13 @@ public class BlogController extends javax.servlet.http.HttpServlet {
     static final String CREATE = "/blog/create";
 
     /**
-     * doPost est une method appelé par les servlets JAVA en cas de requête de type post avec une url commencent par /blog
+     * doPost est une méthode appelée par les servlets JAVA en cas de requête de type post avec une url commençant par /blog
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des execptions Java
      */
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
-
         switch (request.getRequestURI()){
             case CREATE:
                 doPostCreate(request, response);
@@ -34,11 +33,11 @@ public class BlogController extends javax.servlet.http.HttpServlet {
     }
 
     /**
-     * Fonction appeler en cas de requete de type POST vers l'url /blog/create par la fonction doPost()
+     * Fonction appelée en cas de requête de type POST vers l'url /blog/create par la fonction doPost()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doPostCreate(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
@@ -60,11 +59,11 @@ public class BlogController extends javax.servlet.http.HttpServlet {
     }
 
     /**
-     * Fonction appeler en cas de requete de type GET vers l'url /blog par la fonction doGet()
+     * Fonction appelée en cas de requête de type GET vers l'url /blog par la fonction doGet()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doGetBlog(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException{
         ArticleModel articles = new ArticleModel();
@@ -81,11 +80,11 @@ public class BlogController extends javax.servlet.http.HttpServlet {
     }
 
     /**
-     * Fonction appeler en cas de requete de type GET vers l'url /blog/create par la fonction doGet()
+     * Fonction appelée en cas de requête de type GET vers l'url /blog/create par la fonction doGet()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doGetCreate(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
@@ -103,11 +102,11 @@ public class BlogController extends javax.servlet.http.HttpServlet {
     }
 
     /**
-     * doGet est une method appelé par les servlets JAVA en cas de requête de type Get avec une url commencent par /blog
+     * doGet est une méthode appelée par les servlets JAVA en cas de requête de type Get avec une url commençant par /blog
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
 

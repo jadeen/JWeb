@@ -21,11 +21,11 @@ public class ProductController extends javax.servlet.http.HttpServlet{
     static final String OPINION = "/product/opinion";
 
     /**
-     * Fonction appeler en cas de requete de type POST vers l'url /product/nezsletter par la fonction doPost()
+     * Fonction appelée en cas de requête de type POST vers l'url /product/newsletter par la fonction doPost()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doPostNewsletter(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         NewsletterModel newsletterModel = new NewsletterModel();
@@ -43,11 +43,11 @@ public class ProductController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * Fonction appeler en cas de requete de type POST vers l'url /product/opinion par la fonction doPost()
+     * Fonction appelée en cas de requête de type POST vers l'url /product/opinion par la fonction doPost()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doPostOpinion(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         OpinionModel opinionModel = new OpinionModel();
@@ -68,11 +68,11 @@ public class ProductController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * doPost est une method appelé par les servlets JAVA en cas de requête de type post avec une url commencent par /product
+     * doPost est une méthode appelée par les servlets JAVA en cas de requête de type post avec une url commençant par /product
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
 
@@ -87,11 +87,11 @@ public class ProductController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * Fonction appeler en cas de requete de type GET vers l'url /product par la fonction doGet()
+     * Fonction appelée en cas de requête de type GET vers l'url /product par la fonction doGet()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doGetHome(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
@@ -103,11 +103,11 @@ public class ProductController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * doGet est une method appelé par les servlets JAVA en cas de requête de type GET avec une url commencent par /product
+     * doGet est une méthode appelée par les servlets JAVA en cas de requête de type GET avec une url commençant par /product
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         switch (request.getRequestURI()) {

@@ -28,11 +28,11 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
     static final String DISCONNECT = "/profil/deconnect";
 
     /**
-     * Fonction appeler en cas de requete de type POST vers l'url /profil/connect par la fonction doPost()
+     * Fonction appelée en cas de requête de type POST vers l'url /profil/connect par la fonction doPost()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doPostConnect(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
@@ -48,11 +48,11 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * Fonction appeler en cas de requete de type POST vers l'url /profil/inscription par la fonction doPost()
+     * Fonction appelée en cas de requête de type POST vers l'url /profil/inscription par la fonction doPost()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doPostRegister(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel userModel = new UserModel(request.getSession());
@@ -85,11 +85,11 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * doPost est une method appelé par les servlets JAVA en cas de requête de type POST avec une url commencent par /profil
+     * doPost est une méthode appelée par les servlets JAVA en cas de requête de type POST avec une url commençant par /profil
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         switch (request.getRequestURI()){
@@ -103,11 +103,11 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * Fonction appeler en cas de requete de type GET vers l'url /profil/deconnect par la fonction doGet()
+     * Fonction appelée en cas de requête de type GET vers l'url /profil/deconnect par la fonction doGet()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doGetDisconnect(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
@@ -123,11 +123,11 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * Fonction appeler en cas de requete de type GET vers l'url /profil/admin par la fonction doGet()
+     * Fonction appelée en cas de requête de type GET vers l'url /profil/admin par la fonction doGet()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doGetAdmin(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
@@ -148,11 +148,11 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * Fonction appeler en cas de requete de type GET vers l'url /profil/delete par la fonction doGet()
+     * Fonction appelée en cas de requête de type GET vers l'url /profil/delete par la fonction doGet()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doGetDelete(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
 
@@ -174,11 +174,11 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * Fonction appeler en cas de requete de type GET vers l'url /profil/switch/status par la fonction doGet()
+     * Fonction appelée en cas de requête de type GET vers l'url /profil/switch/status par la fonction doGet()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doGetStatusUser(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
@@ -199,11 +199,11 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * Fonction appeler en cas de requete de type GET vers l'url /profil par la fonction doGet()
+     * Fonction appelée en cas de requête de type GET vers l'url /profil par la fonction doGet()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doGetHome(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
@@ -221,11 +221,11 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
     }
 
     /**
-     * doGet est une method appelé par les servlets JAVA en cas de requête de type GET avec une url commencent par /profil
+     * doGet est une méthode appelée par les servlets JAVA en cas de requête de type GET avec une url commençant par /profil
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         switch (request.getRequestURI()){

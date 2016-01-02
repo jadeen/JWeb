@@ -10,23 +10,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * Object permettant un interraction directe avec la table SQLLITE Opinions
+ * Objet permettant un interraction directe avec la table SQLLITE Opinions
  */
 public class OpinionModel {
 
     private ArrayList<Opinion> _data;
 
-    /**
-     * Constructeur de la classe
-     */
     public OpinionModel(){
     }
 
     /**
      * Fonction permettant d'ajouter une opinion sur notre produit
-     * @param user UserModel non permettant de recupere les informations de l'utilisateur connecter a notre site
      * @param opinion String contenant l'opinion de l'utilisateur
-     * @return Flag pour savoir si l'operation a reussi
+     * @return Flag pour savoir si l'operation a réussi
      */
     public boolean addUserOpinion(Opinion opinion){
         SqlManager sm = SqlManager.getInstance();
@@ -79,7 +75,7 @@ public class OpinionModel {
     }
 
     /**
-     * Fonction permettant de retourner une opinion de manière aleatoire
+     * Fonction permettant de retourner une opinion de manière aléatoire
      * @return ResultSet contenant l'opinion
      */
     public Opinion getRandomOpinion(){
