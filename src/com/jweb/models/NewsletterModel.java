@@ -15,7 +15,7 @@ public class NewsletterModel {
 
     /**
      * Fonction permettant l'ajout d'élement à la table newsletters
-     * @param newsletter class Newsletter contenant l'adresse mail à ajouter
+     * @param newsletter Newsletter contenant l'adresse mail à ajouter
      * @return Boolean pour indiquer si l'enregistrement en base de données a fonctionné
      */
     public boolean subscribeNewsletter(Newsletter newsletter){

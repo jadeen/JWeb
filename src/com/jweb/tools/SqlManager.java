@@ -73,7 +73,7 @@ public class SqlManager {
 
     /**
      * Fonction permettant de gérer les Injections SQL
-     * @param sql String contenant la requete SQL a preparer
+     * @param sql String contenant la requête SQL à préparer
      * @return PreparedStatement de notre SQL
      */
     public PreparedStatement prepareStatement(String sql){
@@ -92,7 +92,7 @@ public class SqlManager {
 
     /**
      * Ouvre la connexion avec notre base de données
-     * @return Boolean permettant de savoir si la connection a fonctionné
+     * @return Boolean permettant de savoir si la connexion a fonctionné
      */
     public boolean openConnection()
     {
@@ -204,7 +204,7 @@ public class SqlManager {
     /**
      * Permet de faire les requêtes de type UPDATE, INSERT INTO, CREATE TABLE
      * @param preparedStatement La requête prepare à exécuter
-     * @return Boolean permettent de savoir si l'operation a fonctionné
+     * @return Boolean permettent de savoir si l'opération a fonctionné
      */
     public boolean execute(PreparedStatement preparedStatement){
         if (_connection == null){

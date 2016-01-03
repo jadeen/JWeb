@@ -1,7 +1,7 @@
 package com.jweb.beans;
 
 /**
- * User est un class JAVA de type beans,
+ * User est une classe JAVA de type beans,
  * elle a été construite de manière à ne contenir que des getter/setter
  * au sein du projet elle nous sert de conteneur pour nos articles facilitant le travail des différentes autres parties du programme
  */

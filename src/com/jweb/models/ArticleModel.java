@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class ArticleModel {
     /**
-     * Variable permettant de ne récuperer qu'une seule fois les articles par requête(si besoin)
+     * Variable permettant de ne récupérer qu'une seule fois les articles par requête(si besoin)
      */
     public ArrayList<Article> data;
 
@@ -22,8 +22,8 @@ public class ArticleModel {
     }
 
     /**
-     * Fonction permettant de recupérer tous les articles en base de données
-     * @return Une liste complete de beans article
+     * Fonction permettant de récupérer tous les articles en base de données
+     * @return Une liste complète de beans article
      */
     public ArrayList<Article> all() {
         SqlManager sm = SqlManager.getInstance();
@@ -58,7 +58,7 @@ public class ArticleModel {
 
     /**
      * Fonction permettant l'ajout d'article en base de données
-     * @param element prends un paramètre un objet Article
+     * @param element Article à ajouter
      */
     public void addArticle(Article element){
         SqlManager sm = SqlManager.getInstance();

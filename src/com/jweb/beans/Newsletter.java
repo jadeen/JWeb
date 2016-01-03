@@ -1,7 +1,7 @@
 package com.jweb.beans;
 
 /**
- * Newsletter est un classe JAVA de type beans,
+ * Newsletter est une classe JAVA de type beans,
  * elle a été construite de manière à ne contenir que des getter/setter
  * au sein du projet elle nous sert de conteneur pour nos articles facilitant le travail des différentes autres parties du programme
  */

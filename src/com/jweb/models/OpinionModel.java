@@ -22,7 +22,7 @@ public class OpinionModel {
     /**
      * Fonction permettant d'ajouter une opinion sur notre produit
      * @param opinion String contenant l'opinion de l'utilisateur
-     * @return Flag pour savoir si l'operation a réussi
+     * @return Boolean pour savoir si l'operation a réussi
      */
     public boolean addUserOpinion(Opinion opinion){
         SqlManager sm = SqlManager.getInstance();
