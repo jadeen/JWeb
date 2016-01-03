@@ -164,12 +164,9 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
 
             user.delete(request.getParameter("id"));
 
-            request.setAttribute("users", user.all());
-
-            this.getServletContext().getRequestDispatcher("/WEB-INF/views/userGest.jsp").forward
-                    (request, response);
+            response.sendRedirect(ADMIN);
         }else {
-            response.sendRedirect(STATUS_USER);
+            response.sendRedirect(ADMIN);
         }
     }
 
@@ -187,14 +184,9 @@ public class ProfilController extends javax.servlet.http.HttpServlet{
         if (user.currentUser.getConnect() && user.currentUser.getAdmin()) {
             request.setAttribute("user", user.currentUser);
 
-            user.switchStatus(request.getParameter("id"));
-
-            request.setAttribute("users", user.all());
-
-            this.getServletContext().getRequestDispatcher("/WEB-INF/views/userGest.jsp").forward
-                    (request, response);
+            response.sendRedirect(ADMIN);
         }else {
-            response.sendRedirect(STATUS_USER);
+            response.sendRedirect(ADMIN);
         }
     }
 

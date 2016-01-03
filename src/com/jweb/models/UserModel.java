@@ -52,6 +52,7 @@ public class UserModel {
             ResultSet res = sm.executeQuery(preparedStatement);
 
             if (!res.next()){
+                this.currentUser.setConnect(false);
                 throw new Exception("utilisateur non trouvé");
             }
             this.currentUser.setNom(res.getString("Nom"));

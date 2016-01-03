@@ -26,8 +26,8 @@
                             <h3 class="text-center">Connexion</h3>
                             <form method="post" name="connection" action="/profil/connect">
                                 <div class="form-group" >
-                                    <label for="exampleInputEmail1">Login/Mail</label>
-                                    <input type="login" name="login" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                    <label for="exampleInputEmail1">Login</label>
+                                    <input type="login" name="login" class="form-control" id="exampleInputEmail1" placeholder="Login">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Mots de passe</label>

@@ -52,6 +52,10 @@ public class OpinionModel {
         return (ret);
     }
 
+    /**
+     * fonction permettant de recupere tous les opinions
+     * @return liste des opinion
+     */
     public ArrayList<Opinion> all(){
         SqlManager sm = SqlManager.getInstance();
 
@@ -83,9 +87,6 @@ public class OpinionModel {
      * @return ResultSet contenant l'opinion
      */
     public Opinion getRandomOpinion(){
-
-        System.out.println(_data.size());
-
         if (_data.size() != 0){
             Integer index = (int)(Math.random() * (_data.size()));
             return _data.get(index);
