@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class BlogController extends javax.servlet.http.HttpServlet {
     /** Define pour l'url /blog */
     static final String HOME = "/blog";
-    /** Define pour l'url /blog/creqte */
+    /** Define pour l'url /blog/create */
     static final String CREATE = "/blog/create";
 
     /**
