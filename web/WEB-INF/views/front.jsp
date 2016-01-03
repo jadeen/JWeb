@@ -112,7 +112,7 @@
                     <p>
                         Pour les plus grands adeptes de Ara, rien ne vous empêche de changer vos modules en cours de journée,
                         pour ainsi avoir une utilisation unique de votre smartphone.
-                        En quelques secondes, vous pourrez remplacer votre appareil photo par plus de mémoire vive pour jouer à un jeu vidéo dans une plus grand confort !
+                        En quelques secondes, vous pourrez remplacer votre appareil photo par plus de mémoire vive pour jouer à un jeu vidéo dans un plus grand confort !
                     </p>
                 </div>
             </div>
