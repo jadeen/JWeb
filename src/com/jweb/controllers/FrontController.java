@@ -14,22 +14,22 @@ public class FrontController extends javax.servlet.http.HttpServlet {
     static final String HOME = "/";
 
     /**
-     * doPost est une method appelé par les servlets JAVA en cas de requête de type post ayant pour url /
+     * doPost est une méthode appelée par les servlets JAVA en cas de requête de type post ayant pour url /
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
 
     }
 
     /**
-     * Fonction appeler en cas de requete de type GET vers l'url / par la fonciton doGet()
+     * Fonction appelée en cas de requête de type GET vers l'url / par la fonction doGet()
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     private void doGetHome(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         UserModel user = new UserModel(request.getSession());
@@ -48,11 +48,11 @@ public class FrontController extends javax.servlet.http.HttpServlet {
     }
 
     /**
-     * doGet est une method appelé par les servlets JAVA en cas de requête de type GET ayant pour url /
+     * doGet est une méthode appelée par les servlets JAVA en cas de requête de type GET ayant pour url /
      * @param request variable de type HttpServletRequest
      * @param response variable de type HttpServletReponse
-     * @throws javax.servlet.ServletException genere des exception si notre servlet a un problème
-     * @throws java.io.IOException genere des execption Java
+     * @throws javax.servlet.ServletException Génère des exceptions si notre servlet a un problème
+     * @throws java.io.IOException Génère des exceptions Java
      */
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
 

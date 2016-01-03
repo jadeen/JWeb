@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Object permettant un interraction directe avec la table SQLLITE articles
+ * Objet permettant un interraction directe avec la table SQLLITE articles
  */
 public class ArticleModel {
     /**
-     * Variable permettant de ne récupere qu'une seul fois les articles par requete(si besoin)
+     * Variable permettant de ne récupérer qu'une seule fois les articles par requête(si besoin)
      */
     public ArrayList<Article> data;
 
@@ -22,8 +22,8 @@ public class ArticleModel {
     }
 
     /**
-     * fonction permettant de recupere tous les articles en base de donnée
-     * @return un liste complete de beans article
+     * Fonction permettant de récupérer tous les articles en base de données
+     * @return Une liste complète de beans article
      */
     public ArrayList<Article> all() {
         SqlManager sm = SqlManager.getInstance();
@@ -57,8 +57,8 @@ public class ArticleModel {
     }
 
     /**
-     * fonction permettant l'ajout d'article en base de donnée
-     * @param element prend un parametre un object Article
+     * Fonction permettant l'ajout d'article en base de données
+     * @param element Article à ajouter
      */
     public void addArticle(Article element){
         SqlManager sm = SqlManager.getInstance();

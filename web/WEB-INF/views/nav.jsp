@@ -26,7 +26,7 @@
                 if (user.getAdmin()){
             %>
                 <a href="/blog/create" class="navbar-link navbar-space">
-                    <span class="glyphicon glyphicon-plus"></span> Crée un article
+                    <span class="glyphicon glyphicon-plus"></span> Créer un article
                 </a>
 
                 <a href="/profil/admin" class="navbar-link navbar-space">

@@ -6,7 +6,7 @@ import com.jweb.tools.SqlManager;
 import java.sql.PreparedStatement;
 
 /**
- * Object permettant un interraction directe avec la table SQLLITE Newsletters
+ * Objet permettant un interraction directe avec la table SQLLITE Newsletters
  */
 public class NewsletterModel {
     public NewsletterModel(){
@@ -14,9 +14,9 @@ public class NewsletterModel {
     }
 
     /**
-     * fonction permettant l'ajout d'element a la table newsletters
-     * @param newsletter class Newsletter contenant l'adresse mail a ajouter
-     * @return Boolean pour indiquer si l'enregistrement en base de donnée a marche
+     * Fonction permettant l'ajout d'élement à la table newsletters
+     * @param newsletter Newsletter contenant l'adresse mail à ajouter
+     * @return Boolean pour indiquer si l'enregistrement en base de données a fonctionné
      */
     public boolean subscribeNewsletter(Newsletter newsletter){
         SqlManager sm = SqlManager.getInstance();
