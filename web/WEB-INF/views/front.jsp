@@ -102,7 +102,7 @@
                 <div class="col-md-6">
                     <h3>Des performances équivalentes</h3>
                     <p>
-                        En comparaison aux smartphones classiques, le ration qualité/prix reste équivalent,
+                        En comparaison aux smartphones classiques, le ratio qualité/prix reste équivalent,
                         mais avec un avantage énorme : celui de pouvoir choisir quels composants l'on veut mettre et
                         donc pouvoir consacrer une plus grande partie du budget à certaines fonctionnalités.
                     </p>
