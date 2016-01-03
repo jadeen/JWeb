@@ -30,7 +30,7 @@
                                     <input type="login" name="login" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Mots de passe</label>
+                                    <label for="exampleInputEmail1">Mot de passe</label>
                                     <input type="password" name="password" class="form-control" id="exampleInputEmail1" placeholder="Mot de passe">
                                 </div>
                                 <button type="submit" class="btn btn-default center-block">Connexion</button>
